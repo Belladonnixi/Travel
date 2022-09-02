@@ -2,6 +2,7 @@
 
 - iOS StoryBoard
 - Swift
+- Tab Bar
 
 ### Travel Destinations Bucket List
 - TableView
