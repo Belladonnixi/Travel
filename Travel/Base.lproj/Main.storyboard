@@ -22,11 +22,18 @@
                                 <color key="tintColor" systemColor="systemTealColor"/>
                                 <items>
                                     <navigationItem title="Photos" id="OwR-un-Ify">
-                                        <barButtonItem key="leftBarButtonItem" title="Edit" id="088-QC-7hQ">
-                                            <connections>
-                                                <action selector="editingBtn:" destination="Ka1-c0-I5t" id="SpK-8b-5pN"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <leftBarButtonItems>
+                                            <barButtonItem title="Edit" id="088-QC-7hQ">
+                                                <connections>
+                                                    <action selector="editingBtn:" destination="Ka1-c0-I5t" id="SpK-8b-5pN"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem enabled="NO" systemItem="trash" id="1za-rE-TM2">
+                                                <connections>
+                                                    <action selector="deletingPhotosBtn:" destination="Ka1-c0-I5t" id="8HN-08-Odm"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </leftBarButtonItems>
                                         <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="iWL-uV-hGd">
                                             <connections>
                                                 <action selector="addRandomPhotoBtn:" destination="Ka1-c0-I5t" id="rYm-6v-lNX"/>
@@ -60,23 +67,23 @@
                                                         <constraint firstAttribute="height" constant="125" id="ZbL-sK-2xc"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WR5-vL-ODZ">
-                                                    <rect key="frame" x="91" y="92" width="30" height="30"/>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WR5-vL-ODZ">
+                                                    <rect key="frame" x="95" y="96" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="Zym-zF-toM"/>
                                                         <constraint firstAttribute="height" constant="30" id="xXI-mq-DJ4"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="WR5-vL-ODZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uO9-63-Clq" secondAttribute="leading" constant="20" symbolic="YES" id="3Kk-HH-RWa"/>
-                                                <constraint firstAttribute="bottom" secondItem="WR5-vL-ODZ" secondAttribute="bottom" constant="8" id="QBH-vm-LAk"/>
+                                                <constraint firstAttribute="bottom" secondItem="WR5-vL-ODZ" secondAttribute="bottom" constant="4" id="QBH-vm-LAk"/>
                                                 <constraint firstItem="khy-Kt-rcF" firstAttribute="centerX" secondItem="uO9-63-Clq" secondAttribute="centerX" id="kwk-4P-Vi7"/>
                                                 <constraint firstItem="khy-Kt-rcF" firstAttribute="centerY" secondItem="uO9-63-Clq" secondAttribute="centerY" constant="-2.5" id="sNL-Wb-0h6"/>
-                                                <constraint firstAttribute="trailing" secondItem="WR5-vL-ODZ" secondAttribute="trailing" constant="8" id="zbL-wM-nVd"/>
+                                                <constraint firstAttribute="trailing" secondItem="WR5-vL-ODZ" secondAttribute="trailing" constant="4" id="zbL-wM-nVd"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="129" height="130"/>
@@ -102,6 +109,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Photo Album" image="photo" catalog="system" selectedImage="photo.fill" id="1rk-xD-hhe"/>
                     <connections>
+                        <outlet property="addBtn" destination="iWL-uV-hGd" id="2rD-Nd-Fv4"/>
+                        <outlet property="deleteBtn" destination="1za-rE-TM2" id="XPc-on-wL3"/>
                         <outlet property="editBtn" destination="088-QC-7hQ" id="UHl-II-Obo"/>
                         <outlet property="photoAlbumCV" destination="X83-ib-XqU" id="Y1s-JX-NfV"/>
                     </connections>

@@ -18,6 +18,14 @@ class PhotoAlbumCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    override var isSelected: Bool {
+        didSet {
+            if isEditing {
+                selectLabel.text = isSelected ? "✓" : ""
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
