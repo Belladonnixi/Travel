@@ -17,6 +17,7 @@
 		1D81C1E928C1EC0F000FE925 /* TravelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81C1E828C1EC0F000FE925 /* TravelUITests.swift */; };
 		1D81C1EB28C1EC0F000FE925 /* TravelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81C1EA28C1EC0F000FE925 /* TravelUITestsLaunchTests.swift */; };
 		1DD622B828C20C11008ABA87 /* BucketListViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD622B728C20C11008ABA87 /* BucketListViewControllerExtensions.swift */; };
+		1DD622BB28C23315008ABA87 /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD622BA28C23315008ABA87 /* PhotoAlbumViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		1D81C1E828C1EC0F000FE925 /* TravelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelUITests.swift; sourceTree = "<group>"; };
 		1D81C1EA28C1EC0F000FE925 /* TravelUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1DD622B728C20C11008ABA87 /* BucketListViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListViewControllerExtensions.swift; sourceTree = "<group>"; };
+		1DD622BA28C23315008ABA87 /* PhotoAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +110,8 @@
 				1D81C1D028C1EC0F000FE925 /* Assets.xcassets */,
 				1D81C1D228C1EC0F000FE925 /* LaunchScreen.storyboard */,
 				1D81C1D528C1EC0F000FE925 /* Info.plist */,
-				1DD622B728C20C11008ABA87 /* BucketListViewControllerExtensions.swift */,
+				1DD622B928C22718008ABA87 /* Extensions */,
+				1DD622BA28C23315008ABA87 /* PhotoAlbumViewController.swift */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
@@ -128,6 +131,14 @@
 				1D81C1EA28C1EC0F000FE925 /* TravelUITestsLaunchTests.swift */,
 			);
 			path = TravelUITests;
+			sourceTree = "<group>";
+		};
+		1DD622B928C22718008ABA87 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1DD622B728C20C11008ABA87 /* BucketListViewControllerExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +275,7 @@
 				1DD622B828C20C11008ABA87 /* BucketListViewControllerExtensions.swift in Sources */,
 				1D81C1CC28C1EC0D000FE925 /* BucketListViewController.swift in Sources */,
 				1D81C1C828C1EC0D000FE925 /* AppDelegate.swift in Sources */,
+				1DD622BB28C23315008ABA87 /* PhotoAlbumViewController.swift in Sources */,
 				1D81C1CA28C1EC0D000FE925 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

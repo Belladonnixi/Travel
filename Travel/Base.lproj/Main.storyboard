@@ -5,20 +5,91 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Photo Album-->
         <scene sceneID="JeV-7W-Bou">
             <objects>
-                <viewController id="Ka1-c0-I5t" sceneMemberID="viewController">
+                <viewController id="Ka1-c0-I5t" customClass="PhotoAlbumViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y3e-Vl-lpQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILA-fY-XRr">
+                                <rect key="frame" x="0.0" y="34" width="414" height="44"/>
+                                <color key="tintColor" systemColor="systemTealColor"/>
+                                <items>
+                                    <navigationItem title="Photos" id="OwR-un-Ify">
+                                        <barButtonItem key="leftBarButtonItem" title="Edit" id="088-QC-7hQ">
+                                            <connections>
+                                                <action selector="editingBtn:" destination="Ka1-c0-I5t" id="SpK-8b-5pN"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="iWL-uV-hGd">
+                                            <connections>
+                                                <action selector="addRandomPhotoBtn:" destination="Ka1-c0-I5t" id="rYm-6v-lNX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X83-ib-XqU">
+                                <rect key="frame" x="0.0" y="81" width="414" height="732"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" systemColor="systemTealColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jK3-kG-i4R">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="photoCell" id="OYb-Gk-07B" customClass="CollectionViewCell" customModule="Travel" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uO9-63-Clq">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="khy-Kt-rcF">
+                                                    <rect key="frame" x="4" y="4" width="120" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="2wf-R3-2FK"/>
+                                                        <constraint firstAttribute="height" constant="120" id="ZbL-sK-2xc"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="khy-Kt-rcF" firstAttribute="centerX" secondItem="uO9-63-Clq" secondAttribute="centerX" id="kwk-4P-Vi7"/>
+                                                <constraint firstItem="khy-Kt-rcF" firstAttribute="centerY" secondItem="uO9-63-Clq" secondAttribute="centerY" id="sNL-Wb-0h6"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="photoIv" destination="khy-Kt-rcF" id="Oov-4Q-zTA"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cxj-Av-S4G"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="X83-ib-XqU" firstAttribute="bottom" secondItem="cxj-Av-S4G" secondAttribute="bottom" id="DuF-Fc-don"/>
+                            <constraint firstItem="ILA-fY-XRr" firstAttribute="leading" secondItem="cxj-Av-S4G" secondAttribute="leading" id="LPe-I5-xoq"/>
+                            <constraint firstItem="ILA-fY-XRr" firstAttribute="top" secondItem="cxj-Av-S4G" secondAttribute="top" constant="-10" id="XGh-GK-ChD"/>
+                            <constraint firstItem="X83-ib-XqU" firstAttribute="leading" secondItem="ILA-fY-XRr" secondAttribute="leading" id="YAy-NY-C42"/>
+                            <constraint firstItem="X83-ib-XqU" firstAttribute="top" secondItem="ILA-fY-XRr" secondAttribute="bottom" constant="3" id="fkv-jW-yGJ"/>
+                            <constraint firstItem="ILA-fY-XRr" firstAttribute="centerX" secondItem="y3e-Vl-lpQ" secondAttribute="centerX" id="ouI-WP-AER"/>
+                            <constraint firstItem="X83-ib-XqU" firstAttribute="trailing" secondItem="ILA-fY-XRr" secondAttribute="trailing" id="rwT-dv-qMR"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Photo Album" image="photo" catalog="system" selectedImage="photo.fill" id="1rk-xD-hhe"/>
+                    <connections>
+                        <outlet property="editBtn" destination="088-QC-7hQ" id="UHl-II-Obo"/>
+                        <outlet property="photoAlbumTV" destination="X83-ib-XqU" id="Y1s-JX-NfV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCS-Y1-Cek" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
