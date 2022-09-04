@@ -15,6 +15,8 @@ class PhotoAlbumViewController: UIViewController {
     
     let photos: [String] = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44"]
     
+    var rndPhoto = [String]()
+    
     private let sectionInsets = UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0)
     
     private let itemsPerRow: CGFloat = 3
@@ -24,12 +26,28 @@ class PhotoAlbumViewController: UIViewController {
 
         photoAlbumTV.delegate = self
         photoAlbumTV.dataSource = self
+        
+        let leftButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("showEditing:")))
+            navigationItem.leftBarButtonItem = leftButton
     }
     
     @IBAction func addRandomPhotoBtn(_ sender: UIBarButtonItem) {
+        rndPhoto.append(photos.randomElement()!)
+        print(rndPhoto)
+        photoAlbumTV.reloadData()
     }
     
     @IBAction func editingBtn(_ sender: UIBarButtonItem) {
+        if photoAlbumTV.isEditing == true
+            {
+                photoAlbumTV.isEditing = false
+                editBtn.title = "Edit"
+            }
+            else
+            {
+                photoAlbumTV.isEditing = true
+                editBtn.title = "Done"
+            }
     }
 }
 
@@ -40,14 +58,16 @@ extension PhotoAlbumViewController: UICollectionViewDelegate {
 extension PhotoAlbumViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count
+        return rndPhoto.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! CollectionViewCell
         
-        cell.photoIv.image = UIImage(named: photos[indexPath.row])
+        let photo = UIImage(named: rndPhoto[indexPath.row])
+        
+        cell.photoIv.image = photo
         
         return cell
     }
