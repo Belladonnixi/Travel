@@ -62,11 +62,13 @@ class PhotoAlbumViewController: UIViewController {
             {
                 photoAlbumCV.isEditing = false
                 editBtn.title = "Edit"
+                setEditing(false, animated: false)
             }
             else
             {
                 photoAlbumCV.isEditing = true
                 editBtn.title = "Done"
+                setEditing(true, animated: true)
             }
     }
 }
