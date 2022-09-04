@@ -31,6 +31,16 @@ class PhotoAlbumViewController: UIViewController {
             navigationItem.leftBarButtonItem = leftButton
     }
     
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: true)
+        photoAlbumCV.allowsMultipleSelection = editing
+        photoAlbumCV.indexPathsForVisibleItems.forEach { (indexPath) in
+            let cell = photoAlbumCV.cellForItem(at: indexPath) as!
+                PhotoAlbumCollectionViewCell
+            cell.isEditing = editing
+        }
+    }
+    
     @IBAction func addRandomPhotoBtn(_ sender: UIBarButtonItem) {
         let rnd = photos.randomElement()
         if !rndPhoto.contains(rnd!) { rndPhoto.append(rnd!)
@@ -63,6 +73,11 @@ class PhotoAlbumViewController: UIViewController {
 
 extension PhotoAlbumViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedPhoto = rndPhoto[indexPath.row]
+        print(selectedPhoto)
+    }
+    
 }
 
 extension PhotoAlbumViewController: UICollectionViewDataSource {
@@ -78,6 +93,7 @@ extension PhotoAlbumViewController: UICollectionViewDataSource {
         let photo = UIImage(named: rndPhoto[indexPath.row])
         
         cell.photoIv.image = photo
+        cell.isEditing = isEditing
         
         return cell
     }
