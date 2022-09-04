@@ -7,3 +7,7 @@
 ### Travel Destinations Bucket List
 - TableView
 - edit Mode
+
+### Photoalbum
+- UICollectionView
+- edit Mode
