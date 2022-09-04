@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D3D6F1428C4D715008AE284 /* PhotoAlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D6F1328C4D715008AE284 /* PhotoAlbumCollectionViewCell.swift */; };
 		1D81C1C828C1EC0D000FE925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81C1C728C1EC0D000FE925 /* AppDelegate.swift */; };
 		1D81C1CA28C1EC0D000FE925 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81C1C928C1EC0D000FE925 /* SceneDelegate.swift */; };
 		1D81C1CC28C1EC0D000FE925 /* BucketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81C1CB28C1EC0D000FE925 /* BucketListViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D3D6F1328C4D715008AE284 /* PhotoAlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		1D81C1C428C1EC0D000FE925 /* Travel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D81C1C728C1EC0D000FE925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D81C1C928C1EC0D000FE925 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				1D81C1D528C1EC0F000FE925 /* Info.plist */,
 				1DD622B928C22718008ABA87 /* Extensions */,
 				1DD622BA28C23315008ABA87 /* PhotoAlbumViewController.swift */,
+				1D3D6F1328C4D715008AE284 /* PhotoAlbumCollectionViewCell.swift */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				1D81C1C828C1EC0D000FE925 /* AppDelegate.swift in Sources */,
 				1DD622BB28C23315008ABA87 /* PhotoAlbumViewController.swift in Sources */,
 				1D81C1CA28C1EC0D000FE925 /* SceneDelegate.swift in Sources */,
+				1D3D6F1428C4D715008AE284 /* PhotoAlbumCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
