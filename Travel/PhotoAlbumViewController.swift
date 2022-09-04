@@ -32,8 +32,18 @@ class PhotoAlbumViewController: UIViewController {
     }
     
     @IBAction func addRandomPhotoBtn(_ sender: UIBarButtonItem) {
-        rndPhoto.append(photos.randomElement()!)
-        print(rndPhoto)
+        let rnd = photos.randomElement()
+        if !rndPhoto.contains(rnd!) { rndPhoto.append(rnd!)
+        } else {
+            let alert = UIAlertController(title: "Oh nooo..", message: "The photo you've tried to add is existing in Album. \n Try again!", preferredStyle: .alert)
+            
+            alert.addAction(
+                UIAlertAction(
+                    title: "Cancel", style: .cancel
+                ))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
         photoAlbumTV.reloadData()
     }
     
