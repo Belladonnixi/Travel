@@ -9,7 +9,7 @@ import UIKit
 
 class PhotoAlbumViewController: UIViewController {
 
-    @IBOutlet weak var photoAlbumTV: UICollectionView!
+    @IBOutlet weak var photoAlbumCV: UICollectionView!
     
     @IBOutlet weak var editBtn: UIBarButtonItem!
     
@@ -24,8 +24,8 @@ class PhotoAlbumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        photoAlbumTV.delegate = self
-        photoAlbumTV.dataSource = self
+        photoAlbumCV.delegate = self
+        photoAlbumCV.dataSource = self
         
         let leftButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("showEditing:")))
             navigationItem.leftBarButtonItem = leftButton
@@ -35,27 +35,27 @@ class PhotoAlbumViewController: UIViewController {
         let rnd = photos.randomElement()
         if !rndPhoto.contains(rnd!) { rndPhoto.append(rnd!)
         } else {
-            let alert = UIAlertController(title: "Oh nooo..", message: "The photo you've tried to add is existing in Album. \n Try again!", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Oh nooo..", message: "The photo you've tried to add is existing in Album. \n Please try again!", preferredStyle: .alert)
             
             alert.addAction(
                 UIAlertAction(
-                    title: "Cancel", style: .cancel
+                    title: "Close", style: .cancel
                 ))
             
             self.present(alert, animated: true, completion: nil)
         }
-        photoAlbumTV.reloadData()
+        photoAlbumCV.reloadData()
     }
     
     @IBAction func editingBtn(_ sender: UIBarButtonItem) {
-        if photoAlbumTV.isEditing == true
+        if photoAlbumCV.isEditing == true
             {
-                photoAlbumTV.isEditing = false
+                photoAlbumCV.isEditing = false
                 editBtn.title = "Edit"
             }
             else
             {
-                photoAlbumTV.isEditing = true
+                photoAlbumCV.isEditing = true
                 editBtn.title = "Done"
             }
     }

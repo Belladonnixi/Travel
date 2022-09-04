@@ -88,7 +88,7 @@
                     <tabBarItem key="tabBarItem" title="Photo Album" image="photo" catalog="system" selectedImage="photo.fill" id="1rk-xD-hhe"/>
                     <connections>
                         <outlet property="editBtn" destination="088-QC-7hQ" id="UHl-II-Obo"/>
-                        <outlet property="photoAlbumTV" destination="X83-ib-XqU" id="Y1s-JX-NfV"/>
+                        <outlet property="photoAlbumCV" destination="X83-ib-XqU" id="Y1s-JX-NfV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCS-Y1-Cek" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
