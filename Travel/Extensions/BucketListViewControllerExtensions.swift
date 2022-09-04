@@ -5,7 +5,6 @@
 //  Created by Jessica Ernst on 02.09.22.
 //
 import UIKit
-import Foundation
 
 extension BucketListViewController: UITableViewDataSource {
     
