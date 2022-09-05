@@ -62,19 +62,19 @@ class PhotoAlbumViewController: UIViewController {
     }
     
     @IBAction func editingBtn(_ sender: UIBarButtonItem) {
-        if photoAlbumCV.isEditing == true
+        if self.isEditing == true
             {
-                photoAlbumCV.isEditing = false
+                self.isEditing = false
                 editBtn.title = "Edit"
-                setEditing(false, animated: false)
+                self.setEditing(false, animated: false)
                 addBtn.isEnabled = true
                 deleteBtn.isEnabled = false
             }
             else
             {
-                photoAlbumCV.isEditing = true
+                self.isEditing = true
                 editBtn.title = "Done"
-                setEditing(true, animated: true)
+                self.setEditing(true, animated: true)
                 addBtn.isEnabled = false
                 deleteBtn.isEnabled = true
             }
