@@ -66,7 +66,7 @@ class PhotoAlbumViewController: UIViewController {
             {
                 self.isEditing = false
                 editBtn.title = "Edit"
-                self.setEditing(false, animated: false)
+                setEditing(false, animated: false)
                 addBtn.isEnabled = true
                 deleteBtn.isEnabled = false
             }
@@ -74,7 +74,7 @@ class PhotoAlbumViewController: UIViewController {
             {
                 self.isEditing = true
                 editBtn.title = "Done"
-                self.setEditing(true, animated: true)
+                setEditing(true, animated: true)
                 addBtn.isEnabled = false
                 deleteBtn.isEnabled = true
             }
