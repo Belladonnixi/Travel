@@ -8,21 +8,6 @@
 import UIKit
 
 extension PhotoAlbumViewController: UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if !isEditing {
-            deleteBtn.isEnabled = false
-        } else {
-            deleteBtn.isEnabled = true
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        if let selectedItems = collectionView.indexPathsForSelectedItems, selectedItems.count == 0 {
-            deleteBtn.isEnabled = false
-        }
-    }
-    
 }
 
 extension PhotoAlbumViewController: UICollectionViewDataSource {

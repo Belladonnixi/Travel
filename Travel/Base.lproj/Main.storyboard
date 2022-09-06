@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photo Album-->
+        <!--Photo Album View Controller-->
         <scene sceneID="JeV-7W-Bou">
             <objects>
                 <viewController id="Ka1-c0-I5t" customClass="PhotoAlbumViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,33 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILA-fY-XRr">
-                                <rect key="frame" x="0.0" y="34" width="414" height="44"/>
-                                <color key="tintColor" systemColor="systemTealColor"/>
-                                <items>
-                                    <navigationItem title="Photos" id="OwR-un-Ify">
-                                        <leftBarButtonItems>
-                                            <barButtonItem title="Edit" id="088-QC-7hQ">
-                                                <connections>
-                                                    <action selector="editingBtn:" destination="Ka1-c0-I5t" id="SpK-8b-5pN"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem enabled="NO" systemItem="trash" id="1za-rE-TM2">
-                                                <connections>
-                                                    <action selector="deletingPhotosBtn:" destination="Ka1-c0-I5t" id="8HN-08-Odm"/>
-                                                </connections>
-                                            </barButtonItem>
-                                        </leftBarButtonItems>
-                                        <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="iWL-uV-hGd">
-                                            <connections>
-                                                <action selector="addRandomPhotoBtn:" destination="Ka1-c0-I5t" id="rYm-6v-lNX"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X83-ib-XqU">
-                                <rect key="frame" x="0.0" y="81" width="414" height="732"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" systemColor="systemTealColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jK3-kG-i4R">
@@ -98,140 +73,56 @@
                         <viewLayoutGuide key="safeArea" id="cxj-Av-S4G"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="X83-ib-XqU" firstAttribute="leading" secondItem="y3e-Vl-lpQ" secondAttribute="leading" id="AIO-9X-Ax4"/>
+                            <constraint firstItem="X83-ib-XqU" firstAttribute="top" secondItem="cxj-Av-S4G" secondAttribute="top" id="C72-25-LBD"/>
                             <constraint firstItem="X83-ib-XqU" firstAttribute="bottom" secondItem="cxj-Av-S4G" secondAttribute="bottom" id="DuF-Fc-don"/>
-                            <constraint firstItem="ILA-fY-XRr" firstAttribute="leading" secondItem="cxj-Av-S4G" secondAttribute="leading" id="LPe-I5-xoq"/>
-                            <constraint firstItem="ILA-fY-XRr" firstAttribute="top" secondItem="cxj-Av-S4G" secondAttribute="top" constant="-10" id="XGh-GK-ChD"/>
-                            <constraint firstItem="X83-ib-XqU" firstAttribute="leading" secondItem="ILA-fY-XRr" secondAttribute="leading" id="YAy-NY-C42"/>
-                            <constraint firstItem="X83-ib-XqU" firstAttribute="top" secondItem="ILA-fY-XRr" secondAttribute="bottom" constant="3" id="fkv-jW-yGJ"/>
-                            <constraint firstItem="ILA-fY-XRr" firstAttribute="centerX" secondItem="y3e-Vl-lpQ" secondAttribute="centerX" id="ouI-WP-AER"/>
-                            <constraint firstItem="X83-ib-XqU" firstAttribute="trailing" secondItem="ILA-fY-XRr" secondAttribute="trailing" id="rwT-dv-qMR"/>
+                            <constraint firstAttribute="trailing" secondItem="X83-ib-XqU" secondAttribute="trailing" id="Xym-Fq-XVq"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Photo Album" image="photo" catalog="system" selectedImage="photo.fill" id="1rk-xD-hhe"/>
+                    <navigationItem key="navigationItem" id="rr7-Wf-5iT"/>
                     <connections>
-                        <outlet property="addBtn" destination="iWL-uV-hGd" id="2rD-Nd-Fv4"/>
-                        <outlet property="deleteBtn" destination="1za-rE-TM2" id="XPc-on-wL3"/>
-                        <outlet property="editBtn" destination="088-QC-7hQ" id="UHl-II-Obo"/>
                         <outlet property="photoAlbumCV" destination="X83-ib-XqU" id="Y1s-JX-NfV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCS-Y1-Cek" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-755.07246376811599" y="304.6875"/>
+            <point key="canvasLocation" x="144.92753623188406" y="424.55357142857139"/>
         </scene>
-        <!--Bucket List-->
-        <scene sceneID="y0P-MX-Ztp">
+        <!--Bucket List Table View Controller-->
+        <scene sceneID="78j-Ba-z2x">
             <objects>
-                <viewController id="czu-EQ-MSp" customClass="BucketListViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jlw-Jl-Jn6">
+                <tableViewController id="cEs-cj-fan" customClass="BucketListTableViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="6vE-iW-74N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tom-barrett-M0AWNxnLaMw-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="3mn-wK-cXK">
-                                <rect key="frame" x="0.0" y="-6" width="414" height="932"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="932" id="e5Y-JG-iwf"/>
-                                </constraints>
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
-                            </imageView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rza-XR-Gze">
-                                <rect key="frame" x="0.0" y="-6" width="414" height="902"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nK0-rx-0ZA">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="902"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mXe-5v-UoH">
-                                            <rect key="frame" x="0.0" y="0.0" width="174" height="768"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Bqw-9f-eKC">
-                                                <rect key="frame" x="0.0" y="0.0" width="174" height="768"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            </view>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="174" id="qOt-qC-JoJ"/>
-                                                <constraint firstAttribute="height" constant="768" id="xwr-bN-hW1"/>
-                                            </constraints>
-                                            <vibrancyEffect>
-                                                <blurEffect style="systemMaterial"/>
-                                            </vibrancyEffect>
-                                        </visualEffectView>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mu9-Eb-SL6">
-                                            <rect key="frame" x="0.0" y="82" width="414" height="700"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="tintColor" systemColor="systemTealColor"/>
-                                            <prototypes>
-                                                <tableViewCell clipsSubviews="YES" alpha="0.29999999999999999" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="travelTargetCell" id="VKy-2N-0rP">
-                                                    <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VKy-2N-0rP" id="6lz-s7-sdO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                    </tableViewCellContentView>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </tableViewCell>
-                                            </prototypes>
-                                        </tableView>
-                                        <navigationBar alpha="0.75" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHP-dt-Rau">
-                                            <rect key="frame" x="0.0" y="38" width="414" height="44"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <color key="tintColor" systemColor="systemTealColor"/>
-                                            <items>
-                                                <navigationItem title="Travel Target Bucket List" id="riB-9A-AHC">
-                                                    <barButtonItem key="leftBarButtonItem" title="Edit" id="yOh-hC-lAZ">
-                                                        <connections>
-                                                            <action selector="editingBtn:" destination="czu-EQ-MSp" id="aJf-J6-LBr"/>
-                                                        </connections>
-                                                    </barButtonItem>
-                                                    <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="AIF-Ms-9ZY">
-                                                        <connections>
-                                                            <action selector="addTargetBtn:" destination="czu-EQ-MSp" id="m5m-fh-eDQ"/>
-                                                        </connections>
-                                                    </barButtonItem>
-                                                </navigationItem>
-                                            </items>
-                                            <navigationBarAppearance key="standardAppearance" backgroundEffect="systemThinMaterial"/>
-                                        </navigationBar>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="mu9-Eb-SL6" firstAttribute="top" secondItem="MHP-dt-Rau" secondAttribute="bottom" id="FZq-OI-B40"/>
-                                        <constraint firstAttribute="bottom" secondItem="mu9-Eb-SL6" secondAttribute="bottom" constant="120" id="HsQ-Bk-EMc"/>
-                                        <constraint firstItem="mu9-Eb-SL6" firstAttribute="centerX" secondItem="nK0-rx-0ZA" secondAttribute="centerX" id="Io2-b0-QcB"/>
-                                        <constraint firstItem="mu9-Eb-SL6" firstAttribute="leading" secondItem="mXe-5v-UoH" secondAttribute="leading" id="KWS-vj-oJ2"/>
-                                        <constraint firstItem="mu9-Eb-SL6" firstAttribute="centerY" secondItem="nK0-rx-0ZA" secondAttribute="centerY" constant="-19" id="VBC-az-gUO"/>
-                                        <constraint firstItem="mXe-5v-UoH" firstAttribute="top" secondItem="nK0-rx-0ZA" secondAttribute="top" id="YZx-D6-WlJ"/>
-                                        <constraint firstItem="mu9-Eb-SL6" firstAttribute="trailing" secondItem="MHP-dt-Rau" secondAttribute="trailing" id="lUn-kN-zSy"/>
-                                        <constraint firstItem="mu9-Eb-SL6" firstAttribute="leading" secondItem="MHP-dt-Rau" secondAttribute="leading" id="qcR-PJ-vVm"/>
-                                        <constraint firstItem="mXe-5v-UoH" firstAttribute="leading" secondItem="nK0-rx-0ZA" secondAttribute="leading" id="xY1-nC-yej"/>
-                                    </constraints>
-                                </view>
-                                <blurEffect style="systemUltraThinMaterial"/>
-                            </visualEffectView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="B83-Zk-qYL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="3mn-wK-cXK" firstAttribute="centerX" secondItem="jlw-Jl-Jn6" secondAttribute="centerX" id="Jl8-u0-qvd"/>
-                            <constraint firstItem="Rza-XR-Gze" firstAttribute="trailing" secondItem="3mn-wK-cXK" secondAttribute="trailing" id="KbT-QQ-g20"/>
-                            <constraint firstItem="Rza-XR-Gze" firstAttribute="leading" secondItem="3mn-wK-cXK" secondAttribute="leading" id="R5W-HZ-aTi"/>
-                            <constraint firstItem="3mn-wK-cXK" firstAttribute="leading" secondItem="B83-Zk-qYL" secondAttribute="leading" id="dHS-KZ-y3o"/>
-                            <constraint firstItem="3mn-wK-cXK" firstAttribute="top" secondItem="jlw-Jl-Jn6" secondAttribute="topMargin" constant="-50" id="dpl-Px-iBf"/>
-                            <constraint firstItem="Rza-XR-Gze" firstAttribute="centerY" secondItem="jlw-Jl-Jn6" secondAttribute="centerY" constant="-3" id="hUN-aV-cRd"/>
-                            <constraint firstItem="Rza-XR-Gze" firstAttribute="top" secondItem="3mn-wK-cXK" secondAttribute="top" id="r1n-Th-RSk"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Bucket List" image="list.bullet.rectangle.portrait" catalog="system" selectedImage="list.bullet.rectangle.portrait.fill" id="DJK-AS-zyf"/>
-                    <connections>
-                        <outlet property="bucketListTV" destination="mu9-Eb-SL6" id="fMl-yS-puV"/>
-                        <outlet property="editBtn" destination="yOh-hC-lAZ" id="MxL-ze-Jam"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AIL-9Q-2T5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="travelTargetCell" id="Sdb-vO-5Xb">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sdb-vO-5Xb" id="uCn-ya-bkB">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="tintColor" systemColor="systemTealColor"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cEs-cj-fan" id="HV7-aE-Slr"/>
+                            <outlet property="delegate" destination="cEs-cj-fan" id="Zwd-xf-zX2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="G7x-LQ-qtZ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ooy-ir-Gfa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-755.07246376811599" y="-358.25892857142856"/>
+            <point key="canvasLocation" x="145" y="-358"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="V9U-jg-j2m">
             <objects>
                 <tabBarController id="snY-Xk-aYK" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="LtP-yx-NW5"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fkZ-i9-lBO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -243,13 +134,59 @@
                         </tabBarAppearance>
                     </tabBar>
                     <connections>
-                        <segue destination="czu-EQ-MSp" kind="relationship" relationship="viewControllers" id="qhz-om-jSA"/>
-                        <segue destination="Ka1-c0-I5t" kind="relationship" relationship="viewControllers" id="ykg-mo-Ddh"/>
+                        <segue destination="NI3-j9-hRT" kind="relationship" relationship="viewControllers" id="qhz-om-jSA"/>
+                        <segue destination="etH-5i-RaJ" kind="relationship" relationship="viewControllers" id="ykg-mo-Ddh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kOD-6P-zqJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1761" y="-44"/>
+        </scene>
+        <!--Bucket List-->
+        <scene sceneID="eR1-M6-CvT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NI3-j9-hRT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bucket List" image="list.bullet.rectangle.portrait" catalog="system" selectedImage="list.bullet.rectangle.portrait.fill" id="DJK-AS-zyf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tpc-xV-29r">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemTealColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cEs-cj-fan" kind="relationship" relationship="rootViewController" id="mOS-Ro-fAb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NIG-UI-Djh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-755.07246376811599" y="-358.25892857142856"/>
+        </scene>
+        <!--Photo Album-->
+        <scene sceneID="JxY-hn-ecx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="etH-5i-RaJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Photo Album" image="photo" catalog="system" selectedImage="photo.fill" id="1rk-xD-hhe"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wAP-ci-o5E">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemTealColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ka1-c0-I5t" kind="relationship" relationship="rootViewController" id="Nr6-89-XfE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7YB-WS-xyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-765.21739130434787" y="424.55357142857139"/>
         </scene>
     </scenes>
     <resources>
@@ -257,8 +194,6 @@
         <image name="list.bullet.rectangle.portrait.fill" catalog="system" width="115" height="128"/>
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="tom-barrett-M0AWNxnLaMw-unsplash" width="4000" height="6000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
