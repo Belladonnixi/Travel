@@ -1,6 +1,6 @@
 # Travel App 
 
-learning Project for a bunch of topics....
+###learning Project for a bunch of topics which is gonna be updated regularly in the next weeks...
 
 - iOS StoryBoard
 - Swift
