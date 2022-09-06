@@ -14,6 +14,7 @@ learning Project for a bunch of topics....
 ### Photoalbum
 - UICollectionView
 - edit Mode
+- adding random pictures
 
 
 ![bucketList1](https://user-images.githubusercontent.com/99251460/188696756-f4d66177-9c35-4dc3-ba21-e2290802f70c.png)
