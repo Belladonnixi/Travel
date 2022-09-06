@@ -106,6 +106,10 @@ class BucketListTableViewController: UITableViewController {
             }
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
+        // reset Edit Button when all items are deleted
+        if wentToTargets.count < 1 && wannaGoToTargets.count < 1 {
+            isEditing = false
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
