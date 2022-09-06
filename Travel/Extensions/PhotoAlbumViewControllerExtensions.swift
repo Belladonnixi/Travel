@@ -62,4 +62,11 @@ extension PhotoAlbumViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: - Table view delegate
 extension PhotoAlbumViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if !isEditing {
+            let selectedPhoto = rndPhoto[indexPath.item]
+            self.performSegue(withIdentifier: "detail", sender: selectedPhoto)
+        }
+    }
 }
