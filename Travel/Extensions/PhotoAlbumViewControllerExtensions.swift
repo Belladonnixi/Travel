@@ -7,9 +7,7 @@
 
 import UIKit
 
-extension PhotoAlbumViewController: UICollectionViewDelegate {
-}
-
+// MARK: - Table view data source
 extension PhotoAlbumViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -29,6 +27,7 @@ extension PhotoAlbumViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - Table view delegate flow layout
 extension PhotoAlbumViewController: UICollectionViewDelegateFlowLayout {
   
   func collectionView(
@@ -59,4 +58,8 @@ extension PhotoAlbumViewController: UICollectionViewDelegateFlowLayout {
   ) -> CGFloat {
     return sectionInsets.left
   }
+}
+
+// MARK: - Table view delegate
+extension PhotoAlbumViewController: UICollectionViewDelegate {
 }
