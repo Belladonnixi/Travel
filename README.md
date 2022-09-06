@@ -1,16 +1,14 @@
-# Travel App Homework
+# Travel App 
 
 - iOS StoryBoard
 - Swift
 - Tab Bar
+- NavController
 
 ### Travel Destinations Bucket List
-- TableView
+- TableViewController
 - edit Mode
 
 ### Photoalbum
 - UICollectionView
 - edit Mode
-
-
-That is a way more manual way than you would go productive. And now I know why......
