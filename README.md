@@ -13,10 +13,11 @@
 - UICollectionView
 - edit Mode
 
-![Simulator Screen Shot - iPhone 13 Pro - 2022-09-06 at 18 39 06](https://user-images.githubusercontent.com/99251460/188695278-73f75624-e426-41b7-84de-4f68c16e1fea.png)
 
-![Simulator Screen Shot - iPhone 13 Pro - 2022-09-06 at 18 41 22](https://user-images.githubusercontent.com/99251460/188695320-399e0bfd-61c1-49de-824a-f53f339a8b16.png)
+![bucketList1](https://user-images.githubusercontent.com/99251460/188696756-f4d66177-9c35-4dc3-ba21-e2290802f70c.png)
 
-![Simulator Screen Shot - iPhone 13 Pro - 2022-09-06 at 18 39 58](https://user-images.githubusercontent.com/99251460/188695336-1f7ac45f-ee85-45d2-bedd-1cbae33d992b.png)
+![bucketList2](https://user-images.githubusercontent.com/99251460/188696762-99d155d5-31d6-4360-9ecc-bbc30c40d1f7.png)
 
-![Simulator Screen Shot - iPhone 13 Pro - 2022-09-06 at 18 40 10](https://user-images.githubusercontent.com/99251460/188695306-582b196c-0cf9-4f5f-b7e6-0f7781841f79.png)
+![bucketList3](https://user-images.githubusercontent.com/99251460/188696759-e2c64fef-8f80-4710-91c9-d15402281ec9.png)
+
+![BucketList4](https://user-images.githubusercontent.com/99251460/188696765-7fec92cc-963e-4bab-9e61-3d499c9a8d57.png)
