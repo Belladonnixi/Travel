@@ -98,18 +98,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NoC-9h-idF">
-                                <rect key="frame" x="20" y="241" width="374" height="414"/>
+                                <rect key="frame" x="0.0" y="241" width="414" height="414"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="Enq-SR-dz9"/>
-                                    <constraint firstAttribute="height" constant="414" id="bcD-SX-A5p"/>
+                                    <constraint firstAttribute="width" constant="414" id="hoJ-ax-5te"/>
+                                    <constraint firstAttribute="height" constant="414" id="mXn-UD-uoJ"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f7d-7i-aGY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NoC-9h-idF" firstAttribute="centerX" secondItem="Taf-31-9dI" secondAttribute="centerX" id="aGM-7y-hof"/>
-                            <constraint firstItem="NoC-9h-idF" firstAttribute="centerY" secondItem="Taf-31-9dI" secondAttribute="centerY" id="oDX-T6-8BS"/>
+                            <constraint firstItem="NoC-9h-idF" firstAttribute="centerX" secondItem="Taf-31-9dI" secondAttribute="centerX" id="Hcg-nt-DQd"/>
+                            <constraint firstItem="NoC-9h-idF" firstAttribute="centerY" secondItem="Taf-31-9dI" secondAttribute="centerY" id="dp4-Eg-lNx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="t8A-G1-gl8"/>
