@@ -10,11 +10,21 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     var userId: Int!
+    var userName: String!
+    var email: String!
 
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if userId > 0 {
+            userNameLabel.text = userName
+            emailLabel.text = email
+            passwordLabel.isHidden = false
+        }
+        
     }
 
     @IBAction func loggout(_ sender: UIButton) {
@@ -22,14 +32,5 @@ class ProfileViewController: UIViewController {
         let loginNavController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(loginNavController)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

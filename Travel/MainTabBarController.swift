@@ -32,6 +32,8 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
             }
             if let profileVC = vc as? ProfileViewController {
                 profileVC.userId = userId
+                profileVC.userName = userName
+                profileVC.email = email
 
             }
         }

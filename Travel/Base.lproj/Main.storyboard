@@ -344,25 +344,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="eDl-hz-CoL">
-                                <rect key="frame" x="30.5" y="204" width="353" height="191"/>
+                                <rect key="frame" x="30.5" y="204" width="353" height="218.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="Bh5-lH-tQW">
-                                        <rect key="frame" x="0.0" y="0.0" width="83" height="191"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="83" height="218.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvx-Q4-9X1">
-                                                <rect key="frame" x="0.0" y="0.0" width="83" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="83" height="49.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0Z-9R-Qwu">
-                                                <rect key="frame" x="0.0" y="86" width="45.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="113.5" width="45.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNM-Sr-Y0v">
-                                                <rect key="frame" x="0.0" y="170.5" width="78" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="198" width="78" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -370,30 +370,28 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="TKp-y7-Ifd">
-                                        <rect key="frame" x="121" y="0.0" width="232" height="191"/>
+                                        <rect key="frame" x="121" y="0.0" width="232" height="218.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jessi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ca-Ct-mee">
-                                                <rect key="frame" x="0.0" y="0.0" width="232" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ca-Ct-mee">
+                                                <rect key="frame" x="0.0" y="0.0" width="232" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="CJ0-ZY-PqB"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="232" id="V3w-RC-WpS"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="something@something.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGF-G5-Qme">
-                                                <rect key="frame" x="0.0" y="85" width="232" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGF-G5-Qme">
+                                                <rect key="frame" x="0.0" y="114" width="232" height="104.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="TEY-Qn-Jd1"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="232" id="fge-KN-sl0"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*************" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIo-Ps-0BE">
-                                                <rect key="frame" x="0.0" y="170" width="232" height="21"/>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*************" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIo-Ps-0BE">
+                                                <rect key="frame" x="0.0" y="218.5" width="232" height="21"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="password"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="XHT-9Y-b5Q"/>
@@ -443,6 +441,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="loa-PN-syw"/>
                     <navigationItem key="navigationItem" title="Profile" id="dKU-wi-Qs9"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="bGF-G5-Qme" id="mbz-zf-HzC"/>
+                        <outlet property="passwordLabel" destination="bIo-Ps-0BE" id="gK6-WN-cjg"/>
+                        <outlet property="userNameLabel" destination="3Ca-Ct-mee" id="koe-8R-Ue2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvb-Hg-JYB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
