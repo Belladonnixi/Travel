@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
         if appUser!["name"] == userName.text && appUser!["password"] == password.text {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController") as! MainTabBarController
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(mainTabBarController, Int(appUser!["id"] ?? "0"), String(appUser?["name"] ?? "something"))
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(mainTabBarController, Int(appUser!["id"] ?? "0"), String(appUser?["name"] ?? "something"), String(appUser?["email"] ?? "something"))
         } else if appUser!["name"] != userName.text && appUser!["password"] != password.text{
             userName.text = ""
             password.text = ""

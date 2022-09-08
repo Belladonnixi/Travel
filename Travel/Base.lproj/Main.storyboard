@@ -602,6 +602,9 @@
                                             <color key="tintColor" systemColor="systemTealColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="filled" title="Register"/>
+                                            <connections>
+                                                <action selector="registerUser:" destination="KdJ-So-cZJ" eventType="touchUpInside" id="bXA-AK-gQa"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -630,6 +633,10 @@
                     <navigationItem key="navigationItem" title="Registry" id="ACB-h7-A5A"/>
                     <connections>
                         <outlet property="blurView" destination="UxS-TH-oAq" id="K3P-Jj-0aA"/>
+                        <outlet property="emailLabel" destination="6sP-a7-KL0" id="ZFt-nr-raQ"/>
+                        <outlet property="passwordLabel" destination="AnP-yL-dly" id="TsT-Y9-CWI"/>
+                        <outlet property="repeatPasswordLabel" destination="c0b-K4-zGi" id="ho0-qP-dUJ"/>
+                        <outlet property="userNameLabel" destination="OYU-8X-zUk" id="cdF-tP-orH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iVq-7B-uL3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

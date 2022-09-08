@@ -43,13 +43,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
-    func setRootViewController(_ vc: UIViewController, _ userId: Int? = nil, _ userName: String? = nil) {
+    func setRootViewController(_ vc: UIViewController, _ userId: Int? = nil, _ userName: String? = nil, _ email: String? = nil) {
         if let window = self.window {
             // if we are logging in, pass the userId, username and email
             if let mainTb = vc as? MainTabBarController {
                 mainTb.userId = userId
                 mainTb.userName = userName
-                mainTb.email = appUser!["email"]
+                mainTb.email = email
             }
             window.rootViewController = vc
             
