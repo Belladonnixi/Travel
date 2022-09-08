@@ -18,6 +18,13 @@
 - adding random pictures
 - DetailView
 
+### HomeScreen
+- nearly empty at the moment just showing logged in Username and ID
+
+### Login and Registry Screens
+- App now is starting with a logged in user till the user is logging out
+- if no user is logged in I'm switching rootViewController to LoginNavigationController otherwise switching rootViewController to MainTabBarController to avoid a navStack 
+
 
 ![bucketList1](https://user-images.githubusercontent.com/99251460/188696756-f4d66177-9c35-4dc3-ba21-e2290802f70c.png)
 ![bucketList2](https://user-images.githubusercontent.com/99251460/188696762-99d155d5-31d6-4360-9ecc-bbc30c40d1f7.png)
