@@ -21,7 +21,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         // make sure vc not nil
         guard let viewControllers = viewControllers else {return}
         
-        // passing userID to viewControllers
+        // passing userID, name and email to viewControllers
         for vc in viewControllers {
             if let homeVC = vc as? HomeNavigationController {
                 if let main = homeVC.viewControllers.first as?
@@ -38,16 +38,4 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
             }
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

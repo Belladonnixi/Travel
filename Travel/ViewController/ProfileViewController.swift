@@ -19,11 +19,11 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if userId > 0 {
+        
             userNameLabel.text = userName
             emailLabel.text = email
             passwordLabel.isHidden = false
-        }
+       
         
     }
 

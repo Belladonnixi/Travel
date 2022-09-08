@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
     var appUser : [String:String]? = [
         "name": "Jessi",
         "password": "abcd",
+        "email": "something@something.com",
         "id": "1"
     ]
     
@@ -55,4 +56,5 @@ class LoginViewController: UIViewController {
             failureLabel.isHidden = false
         }
     }
+    
 }
