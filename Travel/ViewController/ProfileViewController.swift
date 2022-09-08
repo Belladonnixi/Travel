@@ -8,6 +8,8 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    var userId: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -10,6 +10,8 @@ import UIKit
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     var userId: Int!
+    var userName: String!
+    var password: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +27,13 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
                 if let main = homeVC.viewControllers.first as?
                     HomeViewController {
                     main.userId = userId
+                    main.userName = userName
                 }
             }
-            
-//            if let profileVC = vc as? ProfileViewController {
-//                profileVC.userId = userId
-//
-//            }
+            if let profileVC = vc as? ProfileViewController {
+                profileVC.userId = userId
+
+            }
         }
     }
     

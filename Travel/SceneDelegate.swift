@@ -30,6 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             // passing id of logged in app user to the tabBar
             mainTB.userId = Int(appUser?["id"] ?? "0")
+            mainTB.userName = String(appUser?["name"] ?? "something")
             window?.rootViewController = mainTB
             window?.makeKeyAndVisible()
         } else {
@@ -40,14 +41,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
-    func setRootViewController(_ vc: UIViewController, _ userId: Int? = nil) {
-         if let window = self.window {
-              // if we are logging in, pass the userId
-              if let mainTb = vc as? MainTabBarController {
-                   mainTb.userId = userId
-              }
-              window.rootViewController = vc
-         }
+    func setRootViewController(_ vc: UIViewController, _ userId: Int? = nil, _ userName: String? = nil) {
+        if let window = self.window {
+            // if we are logging in, pass the userId
+            if let mainTb = vc as? MainTabBarController {
+                mainTb.userId = userId
+            }
+            window.rootViewController = vc
+            
+            // adding animation
+            UIView.transition(with: window,
+                              duration: 0.8,
+                              options: .transitionCurlDown,
+                              animations: nil)
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -244,6 +244,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="blurView" destination="WwZ-1x-c3V" id="Zjs-qM-1Bk"/>
+                        <outlet property="password" destination="lt0-eI-dVv" id="msg-3u-pay"/>
+                        <outlet property="userName" destination="D34-SD-HZ2" id="J2S-HU-Wgg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTB-Fv-8lD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -449,17 +451,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iA-aM-E2W">
+                                <rect key="frame" x="186" y="481" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="x9p-dY-Kae"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ztb-9O-mCf" firstAttribute="centerX" secondItem="O8f-70-bZq" secondAttribute="centerX" id="266-y3-jgb"/>
                             <constraint firstItem="ztb-9O-mCf" firstAttribute="top" secondItem="x9p-dY-Kae" secondAttribute="top" constant="304" id="BPQ-Rt-owT"/>
+                            <constraint firstItem="1iA-aM-E2W" firstAttribute="top" secondItem="ztb-9O-mCf" secondAttribute="bottom" constant="68" id="Vzh-VF-5HA"/>
+                            <constraint firstItem="1iA-aM-E2W" firstAttribute="centerX" secondItem="ztb-9O-mCf" secondAttribute="centerX" id="eVG-5v-3k4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Traveller" id="y5q-nh-IqC"/>
                     <connections>
-                        <outlet property="userIdLabel" destination="ztb-9O-mCf" id="Uxc-Uh-qVF"/>
+                        <outlet property="userIdLabel" destination="1iA-aM-E2W" id="QTg-D1-srN"/>
+                        <outlet property="userNameLabel" destination="ztb-9O-mCf" id="3zL-is-ZYj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ddp-4B-2vg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
