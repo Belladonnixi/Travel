@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var blurView: UIVisualEffectView!
+    @IBOutlet weak var failureLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,21 @@ class LoginViewController: UIViewController {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController") as! MainTabBarController
             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(mainTabBarController, Int(appUser!["id"] ?? "0"), String(appUser?["name"] ?? "something"))
+        } else if appUser!["name"] != userName.text && appUser!["password"] != password.text{
+            userName.text = ""
+            password.text = ""
+            failureLabel.text = "Wrong Username Or Password! \n Please try again"
+            failureLabel.isHidden = false
+        } else if appUser!["name"] != userName.text {
+            userName.text = ""
+            failureLabel.text = "Wrong Username! Please try again"
+            failureLabel.isHidden = false
+        } else if appUser!["password"] != password.text {
+            password.text = ""
+            failureLabel.text = "Wrong Password! Please try again"
+            failureLabel.isHidden = false
         }
+        
     }
     
     /*

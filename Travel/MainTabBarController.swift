@@ -11,7 +11,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     var userId: Int!
     var userName: String!
-    var password: String!
+    var email: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()

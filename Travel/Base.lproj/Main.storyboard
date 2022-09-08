@@ -235,15 +235,26 @@
                                 </view>
                                 <blurEffect style="systemUltraThinMaterial"/>
                             </visualEffectView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong Username/Password try again" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2f-68-S92">
+                                <rect key="frame" x="42" y="774.5" width="330.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="esn-UQ-i90"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Y2f-68-S92" firstAttribute="centerX" secondItem="CkI-ke-AoB" secondAttribute="centerX" id="5S3-YT-WmH"/>
+                            <constraint firstItem="Y2f-68-S92" firstAttribute="centerY" secondItem="CkI-ke-AoB" secondAttribute="centerY" constant="337" id="xjp-Rh-BdH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Traveller" id="6r2-Bt-xdT">
                         <barButtonItem key="backBarButtonItem" title="Login" id="gwV-ZH-raf"/>
                     </navigationItem>
                     <connections>
                         <outlet property="blurView" destination="WwZ-1x-c3V" id="Zjs-qM-1Bk"/>
+                        <outlet property="failureLabel" destination="Y2f-68-S92" id="Fj1-nL-qMw"/>
                         <outlet property="password" destination="lt0-eI-dVv" id="msg-3u-pay"/>
                         <outlet property="userName" destination="D34-SD-HZ2" id="J2S-HU-Wgg"/>
                     </connections>
@@ -641,6 +652,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
