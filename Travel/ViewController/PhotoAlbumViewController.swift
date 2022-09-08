@@ -55,21 +55,6 @@ class PhotoAlbumViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let selectedItem = sender as? String else {
-            return
-        }
-        
-        if segue.identifier == "detail" {
-            guard let destinationVC = segue.destination as?
-                    PhotoDetailViewController else {
-                return
-            }
-            
-            destinationVC.selectedPhoto = selectedItem
-        }
-    }
-    
     @objc func addRandomPhotoBtn() {
         let rnd = photos.randomElement()
         if !rndPhoto.contains(rnd!) { rndPhoto.insert(rnd!, at: 0)

@@ -12,16 +12,42 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     var appUser : [String:String]? = [
-        "name": "Jessica",
+        "name": "Jessi",
         "password": "abcd",
         "id": "1"
     ]
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: windowScene)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if appUser != nil {
+            // if user is logged in go to the tab controller
+            // setMainTabBarController as the root view
+            let mainTB = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
+            
+            // passing id of logged in app user to the tabBar
+            mainTB.userId = Int(appUser?["id"] ?? "0")
+            window?.rootViewController = mainTB
+            window?.makeKeyAndVisible()
+        } else {
+            // user isn't logged in, take the user to LoginNavigationController
+            let loginNC = storyboard.instantiateViewController(withIdentifier: "LoginNavigationController")
+            window?.rootViewController = loginNC
+            window?.makeKeyAndVisible()
+        }
+    }
+    
+    func setRootViewController(_ vc: UIViewController, _ userId: Int? = nil) {
+         if let window = self.window {
+              // if we are logging in, pass the userId
+              if let mainTb = vc as? MainTabBarController {
+                   mainTb.userId = userId
+              }
+              window.rootViewController = vc
+         }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

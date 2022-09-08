@@ -25,6 +25,20 @@ extension PhotoAlbumViewController: UICollectionViewDataSource {
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedItem = sender as? String else {
+            return
+        }
+        if segue.identifier == "detail" {
+            guard let destinationVC = segue.destination as?
+                    PhotoDetailViewController else {
+                return
+            }
+            
+            destinationVC.selectedPhoto = selectedItem
+        }
+    }
 }
 
 // MARK: - Table view delegate flow layout

@@ -17,19 +17,21 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
         
         // make sure vc not nil
-        guard let viewcontrollers = viewControllers else {return}
+        guard let viewControllers = viewControllers else {return}
         
         // passing userID to viewControllers
-        for vc in viewControllers! {
-            if let homeVC = vc as! HomeNavigationController {
-                if let Main = homeVC.viewControllers.first as?
-                    HomeViewController
-                    Main.userId = userId
+        for vc in viewControllers {
+            if let homeVC = vc as? HomeNavigationController {
+                if let main = homeVC.viewControllers.first as?
+                    HomeViewController {
+                    main.userId = userId
+                }
             }
-            if let profileVC = vc as! ProfileViewController {
-                ProfileViewController
-                
-            }
+            
+//            if let profileVC = vc as? ProfileViewController {
+//                profileVC.userId = userId
+//
+//            }
         }
     }
     

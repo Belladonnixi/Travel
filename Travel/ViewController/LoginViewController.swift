@@ -10,7 +10,7 @@ import UIKit
 class LoginViewController: UIViewController {
     
     var appUser : [String:String]? = [
-        "name": "Jessica",
+        "name": "Jessi",
         "password": "abcd",
         "id": "1"
     ]
@@ -31,7 +31,13 @@ class LoginViewController: UIViewController {
         view.addSubview(blurView)
     }
     
-
+    @IBAction func logIn(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController") as! MainTabBarController
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(mainTabBarController, Int(appUser!["id"] ?? "0"))
+    }
+    
     /*
     // MARK: - Navigation
 

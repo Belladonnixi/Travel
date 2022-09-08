@@ -14,8 +14,12 @@ class ProfileViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
 
+    @IBAction func loggout(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginNavController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(loginNavController)
+    }
     /*
     // MARK: - Navigation
 

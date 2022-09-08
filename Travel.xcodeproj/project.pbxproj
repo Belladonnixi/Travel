@@ -12,6 +12,7 @@
 		1D40799F28C9B8E300A32A13 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40799E28C9B8E300A32A13 /* HomeViewController.swift */; };
 		1D4079A128C9B8FB00A32A13 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4079A028C9B8FB00A32A13 /* ProfileViewController.swift */; };
 		1D4079A328C9BADB00A32A13 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4079A228C9BADB00A32A13 /* MainTabBarController.swift */; };
+		1D4079A928CA0A8800A32A13 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4079A828CA0A8800A32A13 /* HomeNavigationController.swift */; };
 		1D4ED47028C5570000160A00 /* PhotoAlbumViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4ED46F28C5570000160A00 /* PhotoAlbumViewControllerExtensions.swift */; };
 		1D59CEA028C7A2410098CA0D /* BucketListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D59CE9F28C7A2410098CA0D /* BucketListTableViewController.swift */; };
 		1D59CEA228C7ACBB0098CA0D /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D59CEA128C7ACBB0098CA0D /* PhotoDetailViewController.swift */; };
@@ -50,6 +51,7 @@
 		1D40799E28C9B8E300A32A13 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1D4079A028C9B8FB00A32A13 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1D4079A228C9BADB00A32A13 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		1D4079A828CA0A8800A32A13 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		1D4ED46F28C5570000160A00 /* PhotoAlbumViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewControllerExtensions.swift; sourceTree = "<group>"; };
 		1D59CE9F28C7A2410098CA0D /* BucketListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListTableViewController.swift; sourceTree = "<group>"; };
 		1D59CEA128C7ACBB0098CA0D /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				1D81C1C728C1EC0D000FE925 /* AppDelegate.swift */,
 				1D81C1C928C1EC0D000FE925 /* SceneDelegate.swift */,
 				1D81C1CD28C1EC0D000FE925 /* Main.storyboard */,
+				1D4079A828CA0A8800A32A13 /* HomeNavigationController.swift */,
 				1D81C1D028C1EC0F000FE925 /* Assets.xcassets */,
 				1D81C1D228C1EC0F000FE925 /* LaunchScreen.storyboard */,
 				1D81C1D528C1EC0F000FE925 /* Info.plist */,
@@ -305,6 +308,7 @@
 				1DD622BB28C23315008ABA87 /* PhotoAlbumViewController.swift in Sources */,
 				1D4079A328C9BADB00A32A13 /* MainTabBarController.swift in Sources */,
 				1D40799D28C8D32C00A32A13 /* RegistryViewController.swift in Sources */,
+				1D4079A928CA0A8800A32A13 /* HomeNavigationController.swift in Sources */,
 				1D81C1CA28C1EC0D000FE925 /* SceneDelegate.swift in Sources */,
 				1D59CEA228C7ACBB0098CA0D /* PhotoDetailViewController.swift in Sources */,
 				1D40799F28C9B8E300A32A13 /* HomeViewController.swift in Sources */,

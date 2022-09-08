@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  HomeNavigationController.swift
 //  Travel
 //
 //  Created by Jessica Ernst on 08.09.22.
@@ -7,15 +7,14 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeNavigationController: UINavigationController {
 
-    var userId: Int!
-    @IBOutlet weak var userIdLabel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        userIdLabel.text = String(userId)
+
+        // Do any additional setup after loading the view.
     }
+    
 
     /*
     // MARK: - Navigation
