@@ -217,7 +217,7 @@
                                             </constraints>
                                             <color key="tintColor" systemColor="linkColor"/>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Don't have an Account? Register"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Don't have an Account? SignUp"/>
                                             <connections>
                                                 <segue destination="KdJ-So-cZJ" kind="show" id="a4o-PT-YPe"/>
                                             </connections>
@@ -535,7 +535,7 @@
             </objects>
             <point key="canvasLocation" x="-3051" y="-44"/>
         </scene>
-        <!--Registry-->
+        <!--SignUp-->
         <scene sceneID="gm8-bf-OrJ">
             <objects>
                 <viewController id="KdJ-So-cZJ" customClass="RegistryViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
@@ -601,7 +601,7 @@
                                             </constraints>
                                             <color key="tintColor" systemColor="systemTealColor"/>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="filled" title="Register"/>
+                                            <buttonConfiguration key="configuration" style="filled" title="SignUp"/>
                                             <connections>
                                                 <action selector="registerUser:" destination="KdJ-So-cZJ" eventType="touchUpInside" id="bXA-AK-gQa"/>
                                             </connections>
@@ -630,7 +630,7 @@
                             <constraint firstItem="UxS-TH-oAq" firstAttribute="top" secondItem="Tco-vI-SEb" secondAttribute="top" constant="155" id="uPH-Ed-3gu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Registry" id="ACB-h7-A5A"/>
+                    <navigationItem key="navigationItem" title="SignUp" id="ACB-h7-A5A"/>
                     <connections>
                         <outlet property="blurView" destination="UxS-TH-oAq" id="K3P-Jj-0aA"/>
                         <outlet property="emailLabel" destination="6sP-a7-KL0" id="ZFt-nr-raQ"/>
