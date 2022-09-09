@@ -24,10 +24,10 @@ class BucketListTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         // Add a background view to the table view
-        let backgroundImage = UIImage(named: "tom-barrett-M0AWNxnLaMw-unsplash")
+        let backgroundImage = UIImage(named: "brett-zeck-eyfMgGvo9PA-unsplash")
         let imageView = UIImageView(image: backgroundImage)
         imageView.contentMode = .scaleAspectFill
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.systemUltraThinMaterial)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = imageView.bounds
         imageView.addSubview(blurView)
