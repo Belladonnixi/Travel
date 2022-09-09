@@ -27,6 +27,7 @@ class PhotoAlbumViewController: UIViewController {
         
         navigationItem.title = "Photo Album"
         configureItems()
+        addLongPressFunctionality()
     }
     
     private func configureItems() {

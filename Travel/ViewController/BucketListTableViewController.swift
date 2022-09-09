@@ -27,7 +27,7 @@ class BucketListTableViewController: UITableViewController {
         let backgroundImage = UIImage(named: "tom-barrett-M0AWNxnLaMw-unsplash")
         let imageView = UIImageView(image: backgroundImage)
         imageView.contentMode = .scaleAspectFill
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.systemUltraThinMaterial)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = imageView.bounds
         imageView.addSubview(blurView)
