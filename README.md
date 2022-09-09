@@ -17,6 +17,7 @@
 - edit Mode
 - adding random pictures
 - DetailView
+- moving PhotoCells around with LongPress
 
 ### HomeScreen
 - nearly empty at the moment just showing logged in Username and ID
