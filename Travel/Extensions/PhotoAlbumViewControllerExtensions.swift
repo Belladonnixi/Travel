@@ -77,10 +77,41 @@ extension PhotoAlbumViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - Table view delegate
 extension PhotoAlbumViewController: UICollectionViewDelegate {
     
+    // cell selection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if !isEditing {
             let selectedPhoto = rndPhoto[indexPath.item]
             self.performSegue(withIdentifier: "detail", sender: selectedPhoto)
+        }
+    }
+    
+    // moving cell
+    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let photo = rndPhoto.remove(at: sourceIndexPath.item)
+        rndPhoto.insert(photo, at: destinationIndexPath.item)
+    }
+    
+    func addLongPressFunctionality() {
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressgesture(gesture:)))
+        self.photoAlbumCV.addGestureRecognizer(longPress)
+    }
+    
+    @objc func longPressgesture(gesture: UILongPressGestureRecognizer) {
+        switch gesture.state {
+        case .began:
+            guard let selectedIndexPath =
+                    photoAlbumCV.indexPathForItem(at: gesture.location(in: photoAlbumCV)) else { return }
+            photoAlbumCV.beginInteractiveMovementForItem(at: selectedIndexPath)
+        case .changed:
+            photoAlbumCV.updateInteractiveMovementTargetPosition(gesture.location(in: gesture.view))
+        case .ended:
+            photoAlbumCV.endInteractiveMovement()
+        default:
+            photoAlbumCV.cancelInteractiveMovement()
         }
     }
 }

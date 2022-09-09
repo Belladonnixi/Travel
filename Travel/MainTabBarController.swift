@@ -8,14 +8,14 @@
 import UIKit
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
-
+    
     var userId: Int!
     var userName: String!
     var email: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.delegate = self
         
         // make sure vc not nil
@@ -34,7 +34,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
                 profileVC.userId = userId
                 profileVC.userName = userName
                 profileVC.email = email
-
+                
             }
         }
     }
