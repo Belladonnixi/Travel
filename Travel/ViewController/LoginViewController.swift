@@ -28,6 +28,7 @@ class LoginViewController: UIViewController {
         
     }
     
+    // blurView for LogIn formular, rounded corners
     private func configureBlurView() {
         blurView.layer.cornerRadius = 25
         blurView.clipsToBounds = true
