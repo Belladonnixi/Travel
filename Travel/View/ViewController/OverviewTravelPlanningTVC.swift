@@ -41,7 +41,6 @@ class OverviewTravelPlanningTVC: UITableViewController {
         
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let addTravelVC = storyboard.instantiateViewController(withIdentifier: "AddTravelPlanning") as! AddTravelPlanningTableViewController
-        addTravelVC.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(addTravelVC, animated: true)
     }
     
