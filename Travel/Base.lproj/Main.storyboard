@@ -156,7 +156,7 @@
         <!--Travel Detail-->
         <scene sceneID="QUd-OW-Jxn">
             <objects>
-                <tableViewController id="oXL-J8-DJl" sceneMemberID="viewController">
+                <tableViewController id="oXL-J8-DJl" customClass="TravelDetailsTVC" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="PsH-VS-kp0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -908,13 +908,13 @@
         <!--Planned Travels-->
         <scene sceneID="8wt-lL-WwR">
             <objects>
-                <tableViewController id="Woq-B1-cUr" sceneMemberID="viewController">
+                <tableViewController id="Woq-B1-cUr" customClass="OverviewTravelPlanningTVC" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="lk4-Nq-6hA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ZcK-Hv-nEV">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlannedTravel" id="ZcK-Hv-nEV">
                                 <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZcK-Hv-nEV" id="Klt-o1-F8z">
@@ -930,8 +930,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Planned Travels" id="XfY-b3-BVo"/>
                     <connections>
-                        <segue destination="Ldg-3o-dpq" kind="show" id="gpd-hj-kcW"/>
-                        <segue destination="oXL-J8-DJl" kind="show" id="Gzw-ms-Fj3"/>
+                        <segue destination="Ldg-3o-dpq" kind="show" identifier="AddTravelPlanningSegue" id="gpd-hj-kcW"/>
+                        <segue destination="oXL-J8-DJl" kind="show" identifier="TravelDetailsSegue" id="Gzw-ms-Fj3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aQx-F4-tfr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
