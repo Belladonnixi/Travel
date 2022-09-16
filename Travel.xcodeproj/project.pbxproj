@@ -29,6 +29,7 @@
 		1DD622BB28C23315008ABA87 /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD622BA28C23315008ABA87 /* PhotoAlbumViewController.swift */; };
 		1DEDC5AE28D47654006F02DE /* OverviewTravelPlanningTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDC5AD28D47654006F02DE /* OverviewTravelPlanningTVC.swift */; };
 		1DEDC5B028D477F0006F02DE /* TravelDetailsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDC5AF28D477F0006F02DE /* TravelDetailsTVC.swift */; };
+		1DEDC5B328D49A5E006F02DE /* TravelPlanning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDC5B228D49A5E006F02DE /* TravelPlanning.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		1DD622BA28C23315008ABA87 /* PhotoAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewController.swift; sourceTree = "<group>"; };
 		1DEDC5AD28D47654006F02DE /* OverviewTravelPlanningTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTravelPlanningTVC.swift; sourceTree = "<group>"; };
 		1DEDC5AF28D477F0006F02DE /* TravelDetailsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDetailsTVC.swift; sourceTree = "<group>"; };
+		1DEDC5B228D49A5E006F02DE /* TravelPlanning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPlanning.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +150,10 @@
 				1D81C1D028C1EC0F000FE925 /* Assets.xcassets */,
 				1D81C1D228C1EC0F000FE925 /* LaunchScreen.storyboard */,
 				1D81C1D528C1EC0F000FE925 /* Info.plist */,
+				1DEDC5B128D49A3F006F02DE /* Model */,
 				1DEDC5AB28D46D35006F02DE /* NavigationController */,
 				1DEDC5AC28D46D5A006F02DE /* View */,
+				1D4ED47128C557B200160A00 /* ViewController */,
 				1DD622B928C22718008ABA87 /* Extensions */,
 			);
 			path = Travel;
@@ -193,9 +197,16 @@
 			isa = PBXGroup;
 			children = (
 				1D3D6F1328C4D715008AE284 /* PhotoAlbumCollectionViewCell.swift */,
-				1D4ED47128C557B200160A00 /* ViewController */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1DEDC5B128D49A3F006F02DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1DEDC5B228D49A5E006F02DE /* TravelPlanning.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +349,7 @@
 				1D4079A928CA0A8800A32A13 /* HomeNavigationController.swift in Sources */,
 				1DEDC5AE28D47654006F02DE /* OverviewTravelPlanningTVC.swift in Sources */,
 				1D81C1CA28C1EC0D000FE925 /* SceneDelegate.swift in Sources */,
+				1DEDC5B328D49A5E006F02DE /* TravelPlanning.swift in Sources */,
 				1D59CEA228C7ACBB0098CA0D /* PhotoDetailViewController.swift in Sources */,
 				1D40799F28C9B8E300A32A13 /* HomeViewController.swift in Sources */,
 				1D4079A128C9B8FB00A32A13 /* ProfileViewController.swift in Sources */,

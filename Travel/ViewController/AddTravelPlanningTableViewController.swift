@@ -11,6 +11,7 @@ class AddTravelPlanningTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         settingBackground()
     }
     
@@ -36,7 +37,7 @@ class AddTravelPlanningTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 6
+        return 7
     }
 
     /*
