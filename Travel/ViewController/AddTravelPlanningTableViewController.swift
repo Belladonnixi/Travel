@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDelegate {
+class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
     
     @IBOutlet weak var titleTF: UITextField!
     @IBOutlet weak var countryTF: UITextField!
@@ -15,6 +15,7 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
     @IBOutlet weak var startTripTF: UITextField!
     @IBOutlet weak var endTripTF: UITextField!
     @IBOutlet weak var travelTypeTF: UITextField!
+    @IBOutlet weak var notesTV: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         startTripTF.delegate = self
         endTripTF.delegate = self
         travelTypeTF.delegate = self
+        notesTV.delegate = self
         
     }
     
@@ -55,11 +57,7 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 7
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        return 8
     }
     
     // MARK: - keyboard return hides keyboard

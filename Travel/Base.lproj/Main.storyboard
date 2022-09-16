@@ -913,27 +913,51 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" alpha="0.85000002384185791" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SaveTripCell" rowHeight="70" id="qTZ-WA-hdc">
-                                        <rect key="frame" x="0.0" y="620.5" width="414" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" alpha="0.85000002384185791" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotesCell" rowHeight="149" id="qTZ-WA-hdc">
+                                        <rect key="frame" x="0.0" y="620.5" width="414" height="149"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qTZ-WA-hdc" id="gER-gg-7LR">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="149"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fWo-AM-PvU">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="149"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fWo-AM-PvU" firstAttribute="leading" secondItem="gER-gg-7LR" secondAttribute="leadingMargin" id="8wa-FE-hCe"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="fWo-AM-PvU" secondAttribute="trailing" id="Ed6-CU-b2F"/>
+                                                <constraint firstItem="fWo-AM-PvU" firstAttribute="top" secondItem="gER-gg-7LR" secondAttribute="topMargin" constant="-11" id="FmX-BS-zbD"/>
+                                                <constraint firstItem="fWo-AM-PvU" firstAttribute="centerY" secondItem="gER-gg-7LR" secondAttribute="centerY" id="gnT-SE-AZ2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" alpha="0.85000002384185791" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SaveTripCell" rowHeight="70" id="AT3-gX-uKx">
+                                        <rect key="frame" x="0.0" y="769.5" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AT3-gX-uKx" id="Egu-Gu-vvG">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyS-Pf-IKJ">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6f2-Pm-Kg2">
                                                     <rect key="frame" x="160" y="17.5" width="94" height="35"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="Save Trip">
                                                         <color key="baseBackgroundColor" systemColor="systemTealColor"/>
                                                     </buttonConfiguration>
                                                     <connections>
-                                                        <action selector="savingTrip:" destination="Ldg-3o-dpq" eventType="touchUpInside" id="UIt-8A-Pgp"/>
+                                                        <action selector="savingTrip:" destination="Ldg-3o-dpq" eventType="touchUpInside" id="7Se-AA-joU"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="pyS-Pf-IKJ" firstAttribute="centerX" secondItem="gER-gg-7LR" secondAttribute="centerX" id="G3O-iU-hSJ"/>
-                                                <constraint firstItem="pyS-Pf-IKJ" firstAttribute="centerY" secondItem="gER-gg-7LR" secondAttribute="centerY" id="Gq0-ig-YIN"/>
+                                                <constraint firstItem="6f2-Pm-Kg2" firstAttribute="centerY" secondItem="Egu-Gu-vvG" secondAttribute="centerY" id="USG-Al-4UD"/>
+                                                <constraint firstItem="6f2-Pm-Kg2" firstAttribute="centerX" secondItem="Egu-Gu-vvG" secondAttribute="centerX" id="uXB-6T-FfO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -951,6 +975,7 @@
                         <outlet property="cityTF" destination="ACJ-CT-fqC" id="GBE-bb-bQq"/>
                         <outlet property="countryTF" destination="uxO-6t-2HD" id="lTK-su-Asc"/>
                         <outlet property="endTripTF" destination="YRv-er-hOY" id="KaA-EN-Rth"/>
+                        <outlet property="notesTV" destination="fWo-AM-PvU" id="OlH-uB-H4F"/>
                         <outlet property="startTripTF" destination="dQu-Zr-A53" id="HQy-ex-Xl7"/>
                         <outlet property="titleTF" destination="JF6-gk-odm" id="uHx-iV-wCy"/>
                         <outlet property="travelTypeTF" destination="edh-f8-0g5" id="WOT-8j-4jw"/>
@@ -1006,6 +1031,9 @@
         <image name="photo" catalog="system" width="128" height="93"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="tom-barrett-M0AWNxnLaMw-unsplash" width="4000" height="6000"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
