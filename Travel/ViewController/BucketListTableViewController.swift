@@ -16,14 +16,8 @@ class BucketListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         self.navigationItem.title = "Travel Bucket List"
          configureItems()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        // Add a background view to the table view
         let backgroundImage = UIImage(named: "brett-zeck-eyfMgGvo9PA-unsplash")
         let imageView = UIImageView(image: backgroundImage)
         imageView.contentMode = .scaleAspectFill
@@ -40,7 +34,6 @@ class BucketListTableViewController: UITableViewController {
             
         navigationItem.rightBarButtonItem =
             UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addTargetBtn))
-        
     }
     
     @objc func addTargetBtn() {

@@ -12,16 +12,6 @@ class TravelPlanningTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         // Add a background view to the table view
         let backgroundImage = UIImage(named: "dariusz-sankowski-3OiYMgDKJ6k-unsplash")
         let imageView = UIImageView(image: backgroundImage)
@@ -31,18 +21,26 @@ class TravelPlanningTableViewController: UITableViewController {
         blurView.frame = imageView.bounds
         imageView.addSubview(blurView)
         self.tableView.backgroundView = imageView
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.clear
+                
+        let navigationBar = self.navigationController!.navigationBar
+        navigationBar.standardAppearance = appearance
     }
+    
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 10
+        
+        return 6
     }
 
     /*
