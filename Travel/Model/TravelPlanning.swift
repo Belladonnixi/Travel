@@ -8,6 +8,7 @@
 import Foundation
 
 struct TravelPlanning {
+    var title: String
     var country: String
     var city: String
     var startDate: Date

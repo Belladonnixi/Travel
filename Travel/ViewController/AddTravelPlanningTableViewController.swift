@@ -9,6 +9,7 @@ import UIKit
 
 class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var titleTF: UITextField!
     @IBOutlet weak var countryTF: UITextField!
     @IBOutlet weak var cityTF: UITextField!
     @IBOutlet weak var startTripTF: UITextField!
@@ -20,6 +21,7 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         
         settingBackground()
         
+        titleTF.delegate = self
         countryTF.delegate = self
         cityTF.delegate = self
         startTripTF.delegate = self
