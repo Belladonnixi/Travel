@@ -913,32 +913,42 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" alpha="0.85000002384185791" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotesCell" rowHeight="149" id="qTZ-WA-hdc">
-                                        <rect key="frame" x="0.0" y="620.5" width="414" height="149"/>
+                                    <tableViewCell clipsSubviews="YES" alpha="0.85000002384185791" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotesCell" rowHeight="204" id="qTZ-WA-hdc">
+                                        <rect key="frame" x="0.0" y="620.5" width="414" height="204"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qTZ-WA-hdc" id="gER-gg-7LR">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="149"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="204"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fWo-AM-PvU">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="149"/>
+                                                    <rect key="frame" x="20" y="37" width="374" height="157"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" flightNumber="YES"/>
                                                 </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type your travel notes in here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgU-g4-sR9">
+                                                    <rect key="frame" x="20" y="11" width="202.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vgU-g4-sR9" secondAttribute="trailing" constant="20" symbolic="YES" id="7p7-9L-Xhn"/>
                                                 <constraint firstItem="fWo-AM-PvU" firstAttribute="leading" secondItem="gER-gg-7LR" secondAttribute="leadingMargin" id="8wa-FE-hCe"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="fWo-AM-PvU" secondAttribute="trailing" id="Ed6-CU-b2F"/>
-                                                <constraint firstItem="fWo-AM-PvU" firstAttribute="top" secondItem="gER-gg-7LR" secondAttribute="topMargin" constant="-11" id="FmX-BS-zbD"/>
-                                                <constraint firstItem="fWo-AM-PvU" firstAttribute="centerY" secondItem="gER-gg-7LR" secondAttribute="centerY" id="gnT-SE-AZ2"/>
+                                                <constraint firstItem="fWo-AM-PvU" firstAttribute="top" secondItem="gER-gg-7LR" secondAttribute="topMargin" constant="26" id="FmX-BS-zbD"/>
+                                                <constraint firstItem="vgU-g4-sR9" firstAttribute="leading" secondItem="fWo-AM-PvU" secondAttribute="leading" id="MZ8-ah-qyF"/>
+                                                <constraint firstItem="fWo-AM-PvU" firstAttribute="top" secondItem="vgU-g4-sR9" secondAttribute="bottom" constant="8" id="gUI-1f-zkR"/>
+                                                <constraint firstItem="fWo-AM-PvU" firstAttribute="centerY" secondItem="gER-gg-7LR" secondAttribute="centerY" constant="13.5" id="gnT-SE-AZ2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" alpha="0.85000002384185791" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SaveTripCell" rowHeight="70" id="AT3-gX-uKx">
-                                        <rect key="frame" x="0.0" y="769.5" width="414" height="70"/>
+                                        <rect key="frame" x="0.0" y="824.5" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AT3-gX-uKx" id="Egu-Gu-vvG">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>

@@ -57,7 +57,7 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 8
+        return 9
     }
     
     // MARK: - keyboard return hides keyboard
