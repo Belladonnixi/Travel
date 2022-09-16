@@ -1,5 +1,5 @@
 //
-//  OverviewTravelPlanningTVC.swift
+//  TravelDetailsTVC.swift
 //  Travel
 //
 //  Created by Jessica Ernst on 16.09.22.
@@ -7,11 +7,12 @@
 
 import UIKit
 
-class OverviewTravelPlanningTVC: UITableViewController {
+class TravelDetailsTVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        settingBackground()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -19,6 +20,19 @@ class OverviewTravelPlanningTVC: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    private func settingBackground() {
+        
+        // Add a background view to the table view
+        let backgroundImage = UIImage(named: "dariusz-sankowski-3OiYMgDKJ6k-unsplash")
+        let imageView = UIImageView(image: backgroundImage)
+        imageView.contentMode = .scaleAspectFill
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = imageView.bounds
+        imageView.addSubview(blurView)
+        self.tableView.backgroundView = imageView
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
