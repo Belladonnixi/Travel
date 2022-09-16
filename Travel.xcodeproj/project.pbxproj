@@ -17,7 +17,7 @@
 		1D59CEA028C7A2410098CA0D /* BucketListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D59CE9F28C7A2410098CA0D /* BucketListTableViewController.swift */; };
 		1D59CEA228C7ACBB0098CA0D /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D59CEA128C7ACBB0098CA0D /* PhotoDetailViewController.swift */; };
 		1D59CEC428C8C48F0098CA0D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D59CEC328C8C48F0098CA0D /* LoginViewController.swift */; };
-		1D71371E28CB703F00BCCBB4 /* TravelPlanningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D71371D28CB703F00BCCBB4 /* TravelPlanningTableViewController.swift */; };
+		1D71371E28CB703F00BCCBB4 /* AddTravelPlanningTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D71371D28CB703F00BCCBB4 /* AddTravelPlanningTableViewController.swift */; };
 		1D81C1C828C1EC0D000FE925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81C1C728C1EC0D000FE925 /* AppDelegate.swift */; };
 		1D81C1CA28C1EC0D000FE925 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81C1C928C1EC0D000FE925 /* SceneDelegate.swift */; };
 		1D81C1CF28C1EC0D000FE925 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D81C1CD28C1EC0D000FE925 /* Main.storyboard */; };
@@ -27,6 +27,7 @@
 		1D81C1E928C1EC0F000FE925 /* TravelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81C1E828C1EC0F000FE925 /* TravelUITests.swift */; };
 		1D81C1EB28C1EC0F000FE925 /* TravelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81C1EA28C1EC0F000FE925 /* TravelUITestsLaunchTests.swift */; };
 		1DD622BB28C23315008ABA87 /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD622BA28C23315008ABA87 /* PhotoAlbumViewController.swift */; };
+		1DEDC5AE28D47654006F02DE /* OverviewTravelPlanningTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDC5AD28D47654006F02DE /* OverviewTravelPlanningTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,7 @@
 		1D59CE9F28C7A2410098CA0D /* BucketListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListTableViewController.swift; sourceTree = "<group>"; };
 		1D59CEA128C7ACBB0098CA0D /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		1D59CEC328C8C48F0098CA0D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		1D71371D28CB703F00BCCBB4 /* TravelPlanningTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPlanningTableViewController.swift; sourceTree = "<group>"; };
+		1D71371D28CB703F00BCCBB4 /* AddTravelPlanningTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTravelPlanningTableViewController.swift; sourceTree = "<group>"; };
 		1D81C1C428C1EC0D000FE925 /* Travel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D81C1C728C1EC0D000FE925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D81C1C928C1EC0D000FE925 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		1D81C1E828C1EC0F000FE925 /* TravelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelUITests.swift; sourceTree = "<group>"; };
 		1D81C1EA28C1EC0F000FE925 /* TravelUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1DD622BA28C23315008ABA87 /* PhotoAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewController.swift; sourceTree = "<group>"; };
+		1DEDC5AD28D47654006F02DE /* OverviewTravelPlanningTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTravelPlanningTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +110,7 @@
 				1D40799C28C8D32C00A32A13 /* RegistryViewController.swift */,
 				1D40799E28C9B8E300A32A13 /* HomeViewController.swift */,
 				1D4079A028C9B8FB00A32A13 /* ProfileViewController.swift */,
-				1D71371D28CB703F00BCCBB4 /* TravelPlanningTableViewController.swift */,
+				1D71371D28CB703F00BCCBB4 /* AddTravelPlanningTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -139,6 +141,7 @@
 				1D81C1C728C1EC0D000FE925 /* AppDelegate.swift */,
 				1D81C1C928C1EC0D000FE925 /* SceneDelegate.swift */,
 				1D81C1CD28C1EC0D000FE925 /* Main.storyboard */,
+				1DEDC5AD28D47654006F02DE /* OverviewTravelPlanningTVC.swift */,
 				1D81C1D028C1EC0F000FE925 /* Assets.xcassets */,
 				1D81C1D228C1EC0F000FE925 /* LaunchScreen.storyboard */,
 				1D81C1D528C1EC0F000FE925 /* Info.plist */,
@@ -325,10 +328,11 @@
 			files = (
 				1D81C1C828C1EC0D000FE925 /* AppDelegate.swift in Sources */,
 				1DD622BB28C23315008ABA87 /* PhotoAlbumViewController.swift in Sources */,
-				1D71371E28CB703F00BCCBB4 /* TravelPlanningTableViewController.swift in Sources */,
+				1D71371E28CB703F00BCCBB4 /* AddTravelPlanningTableViewController.swift in Sources */,
 				1D4079A328C9BADB00A32A13 /* MainTabBarController.swift in Sources */,
 				1D40799D28C8D32C00A32A13 /* RegistryViewController.swift in Sources */,
 				1D4079A928CA0A8800A32A13 /* HomeNavigationController.swift in Sources */,
+				1DEDC5AE28D47654006F02DE /* OverviewTravelPlanningTVC.swift in Sources */,
 				1D81C1CA28C1EC0D000FE925 /* SceneDelegate.swift in Sources */,
 				1D59CEA228C7ACBB0098CA0D /* PhotoDetailViewController.swift in Sources */,
 				1D40799F28C9B8E300A32A13 /* HomeViewController.swift in Sources */,
