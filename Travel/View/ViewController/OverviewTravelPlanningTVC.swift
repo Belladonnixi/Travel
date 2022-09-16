@@ -13,11 +13,15 @@ class OverviewTravelPlanningTVC: UITableViewController {
         super.viewDidLoad()
 
         settingBackground()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        configureItems()
+    }
+    
+    private func configureItems() {
+        navigationItem.leftBarButtonItem =
+            editButtonItem
+            
+        navigationItem.rightBarButtonItem =
+        UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTravelPlanning))
     }
 
     private func settingBackground() {
@@ -31,6 +35,14 @@ class OverviewTravelPlanningTVC: UITableViewController {
         blurView.frame = imageView.bounds
         imageView.addSubview(blurView)
         self.tableView.backgroundView = imageView
+    }
+    
+    @objc func addTravelPlanning() {
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let addTravelVC = storyboard.instantiateViewController(withIdentifier: "AddTravelPlanning") as! AddTravelPlanningTableViewController
+        addTravelVC.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(addTravelVC, animated: true)
     }
     
     // MARK: - Table view data source

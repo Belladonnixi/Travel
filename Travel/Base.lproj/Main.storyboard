@@ -753,7 +753,7 @@
         <!--Add Travel Planning-->
         <scene sceneID="SaZ-1G-Y66">
             <objects>
-                <tableViewController id="Ldg-3o-dpq" customClass="AddTravelPlanningTableViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AddTravelPlanning" id="Ldg-3o-dpq" customClass="AddTravelPlanningTableViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="bqL-PF-pHf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
