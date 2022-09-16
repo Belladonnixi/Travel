@@ -16,16 +16,8 @@ class BucketListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         configureItems()
-        
-        let backgroundImage = UIImage(named: "brett-zeck-eyfMgGvo9PA-unsplash")
-        let imageView = UIImageView(image: backgroundImage)
-        imageView.contentMode = .scaleAspectFill
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.systemUltraThinMaterial)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = imageView.bounds
-        imageView.addSubview(blurView)
-        self.tableView.backgroundView = imageView
+        configureItems()
+        settingBackground()
     }
     
     private func configureItems() {
@@ -34,6 +26,18 @@ class BucketListTableViewController: UITableViewController {
             
         navigationItem.rightBarButtonItem =
             UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addTargetBtn))
+    }
+    
+    private func settingBackground() {
+        // setting Background
+        let backgroundImage = UIImage(named: "brett-zeck-eyfMgGvo9PA-unsplash")
+        let imageView = UIImageView(image: backgroundImage)
+        imageView.contentMode = .scaleAspectFill
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.systemUltraThinMaterial)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = imageView.bounds
+        imageView.addSubview(blurView)
+        self.tableView.backgroundView = imageView
     }
     
     @objc func addTargetBtn() {
