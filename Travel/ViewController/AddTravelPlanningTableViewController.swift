@@ -32,7 +32,10 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         startTripTF.delegate = self
         endTripTF.delegate = self
         travelTypeTF.delegate = self
-        notesTV.delegate = self 
+        notesTV.delegate = self
+        notesTV.inputAccessoryView = createToolbar()
+        
+        createDatePicker()
         
     }
     
@@ -52,6 +55,52 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
     @IBAction func savingTrip(_ sender: Any) {
     }
     
+    //MARK: Toolbar, DatePicker und Keyboard
+    
+    func createToolbar() -> UIToolbar {
+        // Toolbar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        // Done Button
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneBtn], animated: true)
+        
+        return toolbar
+    }
+    
+    func createDatePicker() {
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.datePickerMode = .date
+        startTripTF.inputView = datePicker
+        startTripTF.inputAccessoryView = createToolbar()
+        endTripTF.inputView = datePicker
+        endTripTF.inputAccessoryView = createToolbar()
+    }
+    
+    @objc func donePressed() {
+        
+        if notesTV.isFocused {
+            notesTV.endEditing(true)
+        } else {
+            if startTripTF.isEditing {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy MMM dd."
+                self.startTripTF.text = dateFormatter.string(from: datePicker.date)
+            } else {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy MMM dd."
+                self.endTripTF.text = dateFormatter.string(from: datePicker.date)
+            }
+            self.view.endEditing(true)
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return false
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -62,12 +111,6 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 9
-    }
-    
-    // MARK: - keyboard, return hides keyboard
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.endEditing(true)
-        return false
     }
     
 }
