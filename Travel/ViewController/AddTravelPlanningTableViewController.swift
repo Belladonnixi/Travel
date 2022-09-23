@@ -98,11 +98,11 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         if notesTV.isFocused {
             notesTV.endEditing(true)
         } else {
-            if startTripTF.isFocused {
+            if startTripTF.isEditing {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy MMM dd."
                 self.startTripTF.text = dateFormatter.string(from: datePicker.date)
-            } else if endTripTF.isFocused{
+            } else {
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy MMM dd."
                 self.endTripTF.text = dateFormatter.string(from: datePicker.date)
