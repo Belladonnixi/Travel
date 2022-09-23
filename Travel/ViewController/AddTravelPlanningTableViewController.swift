@@ -19,6 +19,9 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
     
     let datePicker: UIDatePicker = UIDatePicker()
     
+    let travelType_array = ["Private", "Business"]
+    let travelType_picker = UIPickerView()
+    
     var travelPlanning: TravelPlanning!
     
     override func viewDidLoad() {
@@ -37,6 +40,10 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         
         createDatePicker()
         
+        travelType_picker.dataSource = self
+        travelType_picker.delegate = self
+        pick_travelType()
+        
     }
     
     private func settingBackground() {
@@ -51,6 +58,8 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         imageView.addSubview(blurView)
         self.tableView.backgroundView = imageView
     }
+    
+    // MARK: - Action
     
     @IBAction func savingTrip(_ sender: Any) {
     }
@@ -78,6 +87,12 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         endTripTF.inputAccessoryView = createToolbar()
     }
     
+    //MARK: - pick_travelType
+    func pick_travelType(){
+        travelTypeTF.inputAccessoryView = createToolbar()
+        travelTypeTF.inputView = travelType_picker
+    }
+    
     @objc func donePressed() {
         
         if notesTV.isFocused {
@@ -87,7 +102,7 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy MMM dd."
                 self.startTripTF.text = dateFormatter.string(from: datePicker.date)
-            } else {
+            } else if endTripTF.isFocused{
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy MMM dd."
                 self.endTripTF.text = dateFormatter.string(from: datePicker.date)
@@ -114,3 +129,37 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
     }
     
 }
+
+extension AddTravelPlanningTableViewController: UIPickerViewDataSource, UIPickerViewDelegate{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        switch pickerView{
+        case travelType_picker: return travelType_array.count
+        default: return 0
+        }
+        
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        switch pickerView{
+        case travelType_picker: return travelType_array[row]
+        default: return ""
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        switch pickerView{
+        case travelType_picker: travelTypeTF.text = travelType_array[row]
+        default: print("An Error occured")
+        }
+        
+    }
+}
+
