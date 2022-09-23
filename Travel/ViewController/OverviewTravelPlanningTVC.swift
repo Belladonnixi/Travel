@@ -24,6 +24,7 @@ class OverviewTravelPlanningTVC: UITableViewController {
         
         settingBackground()
         configureItems()
+        fetchTravels()
     }
     
     private func configureItems() {
@@ -47,8 +48,21 @@ class OverviewTravelPlanningTVC: UITableViewController {
         self.tableView.backgroundView = imageView
     }
     
+    func fetchTravels() {
+        // Fetching Data
+        do {
+            self.plannedTravels = try context.fetch(TravelPlanning.fetchRequest())
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        } catch {
+            print("Error by trying fetch request")
+        }
+    }
+    
     @objc func addNewTravelPlanning(_ notification: NSNotification) {
-        
+        self.fetchTravels()
     }
     
     @objc func addTravelPlanning() {
@@ -59,14 +73,42 @@ class OverviewTravelPlanningTVC: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
-    //    override func numberOfSections(in tableView: UITableView) -> Int {
-    //        // #warning Incomplete implementation, return the number of sections
-    //        return 0
-    //    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlannedTravel", for: indexPath)
+        let travel = self.plannedTravels![indexPath.row]
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = travel.title
+        cell.contentConfiguration = content
+        
+        return cell
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.plannedTravels?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            // Zu löschenden Kontakt bestimmen
+            let travelToDelete = self.plannedTravels![indexPath.row]
+            
+            // Kontakt löschen
+            self.context.delete(travelToDelete)
+            
+            // Context speichern
+            do {
+                try self.context.save()
+            } catch {
+                print("Saving context failed")
+            }
+            
+            // Re-fetch Data / Reload
+            self.fetchTravels()
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     
     //MARK: - prepare for segue
