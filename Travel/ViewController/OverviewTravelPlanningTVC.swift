@@ -92,9 +92,7 @@ class OverviewTravelPlanningTVC: UITableViewController {
         
         let travelPlanningTuple = (indexPath.row, selectedTravel)
         
-        // Sender: contactTuple an DetailsVC
-        //performSegue(withIdentifier: "ShowDetailsSegue", sender: selectedContact)
-        performSegue(withIdentifier: "DetailsSegue", sender: travelPlanningTuple)
+        performSegue(withIdentifier: "TravelDetailsSegue", sender: travelPlanningTuple)
     }
     
 }
