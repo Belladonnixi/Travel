@@ -7,11 +7,15 @@
 
 import UIKit
 
-//protocol TravelPlansDelegate: AnyObject {
-//    func update(
-//}
+protocol TravelPlansDelegate: AnyObject {
+    func update(plannedTravel: TravelPlanning, index: Int)
+}
 
 class OverviewTravelPlanningTVC: UITableViewController {
+    
+    var plannedTravels: [TravelPlanning]?
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,24 +66,46 @@ class OverviewTravelPlanningTVC: UITableViewController {
     //    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return plannedTravels.count
+        return self.plannedTravels?.count ?? 0
     }
     
-//    //MARK: prepare for segue
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "ShowDetailsSegue" {
-//            
-//            guard let destinationVC = segue.destination as? TravelDetailsTVC else { return }
-//            //guard let contact = sender as? ContactModel else { return }
-//            guard let travelPlanningTuple = sender as? (Int, Contact) else { return }
-//            //destinationVC.contact = contact
-//            
-//            destinationVC.contactIndex = contactTuple.0
-//            destinationVC.contact = contactTuple.1
-//            
-//            destinationVC.delegate = self
-//            
-//        }
-//    }
+    //MARK: - prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TravelDetailsSegue" {
+            
+            guard let destinationVC = segue.destination as? TravelDetailsTVC else { return }
+            
+            guard let travelPlanningTuple = sender as? (Int, TravelPlanning) else { return }
+            
+            destinationVC.travelPlanningIndex = travelPlanningTuple.0
+            destinationVC.plannedTravel = travelPlanningTuple.1
+            
+            destinationVC.delegate = self
+            
+        }
+    }
+    
+    // MARK: - Delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedTravel = plannedTravels![indexPath.row]
+        
+        let travelPlanningTuple = (indexPath.row, selectedTravel)
+        
+        // Sender: contactTuple an DetailsVC
+        //performSegue(withIdentifier: "ShowDetailsSegue", sender: selectedContact)
+        performSegue(withIdentifier: "DetailsSegue", sender: travelPlanningTuple)
+    }
+    
+}
+
+// MARK: - Extension TravelPlansDelegate
+extension OverviewTravelPlanningTVC: TravelPlansDelegate {
+    func update(plannedTravel: TravelPlanning, index: Int) {
+        
+        plannedTravels![index] = plannedTravel
+        tableView.reloadData()
+    }
+    
     
 }

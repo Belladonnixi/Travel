@@ -8,6 +8,13 @@
 import UIKit
 
 class TravelDetailsTVC: UITableViewController {
+    
+    var plannedTravel: TravelPlanning!
+    var travelPlanningIndex: Int!
+    
+    weak var delegate: TravelPlansDelegate?
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()

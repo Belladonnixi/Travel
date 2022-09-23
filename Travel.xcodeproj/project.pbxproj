@@ -128,7 +128,6 @@
 				1D4079A028C9B8FB00A32A13 /* ProfileViewController.swift */,
 				1DEDC5AD28D47654006F02DE /* OverviewTravelPlanningTVC.swift */,
 				1D71371D28CB703F00BCCBB4 /* AddTravelPlanningTableViewController.swift */,
-				1D2DF7BE28DAFBDD00466A6C /* Travel.xcdatamodeld */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -137,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				1D81C1C628C1EC0D000FE925 /* Travel */,
+				1D2DF7BE28DAFBDD00466A6C /* Travel.xcdatamodeld */,
 				1D81C1DD28C1EC0F000FE925 /* TravelTests */,
 				1D81C1E728C1EC0F000FE925 /* TravelUITests */,
 				1D81C1C528C1EC0D000FE925 /* Products */,
@@ -159,10 +159,9 @@
 			children = (
 				1D81C1C728C1EC0D000FE925 /* AppDelegate.swift */,
 				1D81C1C928C1EC0D000FE925 /* SceneDelegate.swift */,
-				1D81C1CD28C1EC0D000FE925 /* Main.storyboard */,
 				1D81C1D028C1EC0F000FE925 /* Assets.xcassets */,
-				1D81C1D228C1EC0F000FE925 /* LaunchScreen.storyboard */,
 				1D81C1D528C1EC0F000FE925 /* Info.plist */,
+				1DBE995428DDB71A00D85184 /* StoryBoard */,
 				1DEDC5B128D49A3F006F02DE /* Model */,
 				1DEDC5AB28D46D35006F02DE /* NavigationController */,
 				1D4ED47128C557B200160A00 /* ViewController */,
@@ -186,6 +185,15 @@
 				1D81C1EA28C1EC0F000FE925 /* TravelUITestsLaunchTests.swift */,
 			);
 			path = TravelUITests;
+			sourceTree = "<group>";
+		};
+		1DBE995428DDB71A00D85184 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				1D81C1CD28C1EC0D000FE925 /* Main.storyboard */,
+				1D81C1D228C1EC0F000FE925 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 		1DD622B928C22718008ABA87 /* Extensions */ = {
