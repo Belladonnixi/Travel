@@ -137,29 +137,27 @@ extension AddTravelPlanningTableViewController: UIPickerViewDataSource, UIPicker
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        switch pickerView{
-        case travelType_picker: return travelType_array.count
-        default: return 0
+        if pickerView == travelType_picker {
+            return travelType_array.count
         }
-        
+        return 0
     }
     
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        switch pickerView{
-        case travelType_picker: return travelType_array[row]
-        default: return ""
+        if pickerView == travelType_picker {
+            return travelType_array[row]
         }
+        return ""
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        switch pickerView{
-        case travelType_picker: travelTypeTF.text = travelType_array[row]
-        default: print("An Error occured")
+        if pickerView == travelType_picker {
+            travelTypeTF.text = travelType_array[row]
         }
-        
+        print("An Error occured")
     }
 }
 
