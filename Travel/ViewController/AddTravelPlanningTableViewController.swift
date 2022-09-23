@@ -17,6 +17,10 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
     @IBOutlet weak var travelTypeTF: UITextField!
     @IBOutlet weak var notesTV: UITextView!
     
+    let datePicker: UIDatePicker = UIDatePicker()
+    
+    var travelPlanning: TravelPlanning!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +32,7 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         startTripTF.delegate = self
         endTripTF.delegate = self
         travelTypeTF.delegate = self
-        notesTV.delegate = self
+        notesTV.delegate = self 
         
     }
     
@@ -60,7 +64,7 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         return 9
     }
     
-    // MARK: - keyboard return hides keyboard
+    // MARK: - keyboard, return hides keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
         return false

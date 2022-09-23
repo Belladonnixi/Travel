@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D2DF7C028DAFBDD00466A6C /* Travel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D2DF7BE28DAFBDD00466A6C /* Travel.xcdatamodeld */; };
 		1D3D6F1428C4D715008AE284 /* PhotoAlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D6F1328C4D715008AE284 /* PhotoAlbumCollectionViewCell.swift */; };
 		1D40799D28C8D32C00A32A13 /* RegistryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40799C28C8D32C00A32A13 /* RegistryViewController.swift */; };
 		1D40799F28C9B8E300A32A13 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40799E28C9B8E300A32A13 /* HomeViewController.swift */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D2DF7BC28DAF5D000466A6C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1D2DF7BF28DAFBDD00466A6C /* Travel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Travel.xcdatamodel; sourceTree = "<group>"; };
 		1D3D6F1328C4D715008AE284 /* PhotoAlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		1D40799C28C8D32C00A32A13 /* RegistryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryViewController.swift; sourceTree = "<group>"; };
 		1D40799E28C9B8E300A32A13 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D2DF7BB28DAF5CF00466A6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D2DF7BC28DAF5D000466A6C /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1D4ED47128C557B200160A00 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +128,7 @@
 				1D4079A028C9B8FB00A32A13 /* ProfileViewController.swift */,
 				1DEDC5AD28D47654006F02DE /* OverviewTravelPlanningTVC.swift */,
 				1D71371D28CB703F00BCCBB4 /* AddTravelPlanningTableViewController.swift */,
+				1D2DF7BE28DAFBDD00466A6C /* Travel.xcdatamodeld */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -128,6 +140,7 @@
 				1D81C1DD28C1EC0F000FE925 /* TravelTests */,
 				1D81C1E728C1EC0F000FE925 /* TravelUITests */,
 				1D81C1C528C1EC0D000FE925 /* Products */,
+				1D2DF7BB28DAF5CF00466A6C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,7 +165,6 @@
 				1D81C1D528C1EC0F000FE925 /* Info.plist */,
 				1DEDC5B128D49A3F006F02DE /* Model */,
 				1DEDC5AB28D46D35006F02DE /* NavigationController */,
-				1DEDC5AC28D46D5A006F02DE /* View */,
 				1D4ED47128C557B200160A00 /* ViewController */,
 				1DD622B928C22718008ABA87 /* Extensions */,
 			);
@@ -193,17 +205,10 @@
 			path = NavigationController;
 			sourceTree = "<group>";
 		};
-		1DEDC5AC28D46D5A006F02DE /* View */ = {
-			isa = PBXGroup;
-			children = (
-				1D3D6F1328C4D715008AE284 /* PhotoAlbumCollectionViewCell.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		1DEDC5B128D49A3F006F02DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1D3D6F1328C4D715008AE284 /* PhotoAlbumCollectionViewCell.swift */,
 				1DEDC5B228D49A5E006F02DE /* TravelPlanning.swift */,
 			);
 			path = Model;
@@ -349,6 +354,7 @@
 				1D4079A928CA0A8800A32A13 /* HomeNavigationController.swift in Sources */,
 				1DEDC5AE28D47654006F02DE /* OverviewTravelPlanningTVC.swift in Sources */,
 				1D81C1CA28C1EC0D000FE925 /* SceneDelegate.swift in Sources */,
+				1D2DF7C028DAFBDD00466A6C /* Travel.xcdatamodeld in Sources */,
 				1DEDC5B328D49A5E006F02DE /* TravelPlanning.swift in Sources */,
 				1D59CEA228C7ACBB0098CA0D /* PhotoDetailViewController.swift in Sources */,
 				1D40799F28C9B8E300A32A13 /* HomeViewController.swift in Sources */,
@@ -698,6 +704,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1D2DF7BE28DAFBDD00466A6C /* Travel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1D2DF7BF28DAFBDD00466A6C /* Travel.xcdatamodel */,
+			);
+			currentVersion = 1D2DF7BF28DAFBDD00466A6C /* Travel.xcdatamodel */;
+			path = Travel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1D81C1BC28C1EC0D000FE925 /* Project object */;
 }
