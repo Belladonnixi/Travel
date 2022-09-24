@@ -69,7 +69,6 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
     
     @IBAction func savingTrip(_ sender: Any) {
         
-        // Neuen Kontakt erzeugen
         let newTravelPlanning = TravelPlanning(context: self.context)
         newTravelPlanning.title = titleTF.text
         newTravelPlanning.city = cityTF.text
@@ -79,14 +78,13 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         newTravelPlanning.travelType = travelTypeTF.text
         newTravelPlanning.travelNotes = notesTV.text
         
-        // Save context
+        
         do {
             try self.context.save()
         } catch {
             print("Error; context saving")
         }
         
-        // Daten per Notification Center senden:
         NotificationCenter.default.post(name: NSNotification.Name.init("de.Travel.addTravelPlanning"), object: newTravelPlanning)
         
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
