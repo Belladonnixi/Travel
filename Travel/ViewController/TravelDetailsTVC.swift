@@ -62,6 +62,8 @@ class TravelDetailsTVC: UITableViewController, UITextFieldDelegate, UITextViewDe
         travelType_picker.delegate = self
         pick_travelType()
         
+        createDatePicker()
+        
     }
     
     // MARK: - Action
