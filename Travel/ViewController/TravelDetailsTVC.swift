@@ -33,6 +33,14 @@ class TravelDetailsTVC: UITableViewController {
         
         settingBackground()
         
+        titleTF.text = plannedTravel.title
+        countryTF.text = plannedTravel.country
+        cityTF.text = plannedTravel.city
+        startTripTF.text = plannedTravel.startDate
+        endTripTF.text = plannedTravel.endDate
+        travelTypeTF.text = plannedTravel.travelType
+        notesTV.text = plannedTravel.travelNotes
+        
 //        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
@@ -58,7 +66,7 @@ class TravelDetailsTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 8
+        return 9
     }
     
 }

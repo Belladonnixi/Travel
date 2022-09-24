@@ -76,6 +76,7 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         newTravelPlanning.country = countryTF.text
         newTravelPlanning.startDate = startTripTF.text
         newTravelPlanning.endDate = endTripTF.text
+        newTravelPlanning.travelType = travelTypeTF.text
         newTravelPlanning.travelNotes = notesTV.text
         
         // Save context
@@ -88,7 +89,9 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         // Daten per Notification Center senden:
         NotificationCenter.default.post(name: NSNotification.Name.init("de.Travel.addTravelPlanning"), object: newTravelPlanning)
         
-        self.dismiss(animated: true)
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let overviewTravelVC = storyboard.instantiateViewController(withIdentifier: "OverviewTravelPlanningTVC") as! OverviewTravelPlanningTVC
+        self.navigationController?.pushViewController(overviewTravelVC, animated: true)
     }
     
     //MARK: Toolbar, DatePicker und Keyboard
