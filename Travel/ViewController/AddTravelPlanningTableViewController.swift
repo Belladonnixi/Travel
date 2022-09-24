@@ -19,10 +19,19 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
     
     let datePicker: UIDatePicker = UIDatePicker()
     
+    let travelType_array = ["Private", "Business"]
+    let travelType_picker = UIPickerView()
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     var travelPlanning: TravelPlanning!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        notesTV.layer.cornerRadius = 5
+        notesTV.layer.borderWidth = 1
+        notesTV.layer.borderColor = UIColor.lightGray.cgColor
         
         settingBackground()
         
@@ -36,6 +45,10 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         notesTV.inputAccessoryView = createToolbar()
         
         createDatePicker()
+        
+        travelType_picker.dataSource = self
+        travelType_picker.delegate = self
+        pick_travelType()
         
     }
     
@@ -52,7 +65,31 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         self.tableView.backgroundView = imageView
     }
     
+    // MARK: - Action
+    
     @IBAction func savingTrip(_ sender: Any) {
+        
+        let newTravelPlanning = TravelPlanning(context: self.context)
+        newTravelPlanning.title = titleTF.text
+        newTravelPlanning.city = cityTF.text
+        newTravelPlanning.country = countryTF.text
+        newTravelPlanning.startDate = startTripTF.text
+        newTravelPlanning.endDate = endTripTF.text
+        newTravelPlanning.travelType = travelTypeTF.text
+        newTravelPlanning.travelNotes = notesTV.text
+        
+        
+        do {
+            try self.context.save()
+        } catch {
+            print("Error; context saving")
+        }
+        
+        NotificationCenter.default.post(name: NSNotification.Name.init("de.Travel.addTravelPlanning"), object: newTravelPlanning)
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let overviewTravelVC = storyboard.instantiateViewController(withIdentifier: "OverviewTravelPlanningTVC") as! OverviewTravelPlanningTVC
+        self.navigationController?.pushViewController(overviewTravelVC, animated: true)
     }
     
     //MARK: Toolbar, DatePicker und Keyboard
@@ -78,18 +115,24 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         endTripTF.inputAccessoryView = createToolbar()
     }
     
+    //MARK: - pick_travelType
+    func pick_travelType(){
+        travelTypeTF.inputAccessoryView = createToolbar()
+        travelTypeTF.inputView = travelType_picker
+    }
+    
     @objc func donePressed() {
         
         if notesTV.isFocused {
             notesTV.endEditing(true)
         } else {
-            if startTripTF.isFocused {
+            if startTripTF.isEditing {
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy MMM dd."
+                dateFormatter.dateFormat = "MMM dd. yyyy"
                 self.startTripTF.text = dateFormatter.string(from: datePicker.date)
             } else {
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy MMM dd."
+                dateFormatter.dateFormat = "MMM dd. yyyy"
                 self.endTripTF.text = dateFormatter.string(from: datePicker.date)
             }
             self.view.endEditing(true)
@@ -112,5 +155,4 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         
         return 9
     }
-    
 }

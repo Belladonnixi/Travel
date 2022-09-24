@@ -7,19 +7,101 @@
 
 import UIKit
 
-class TravelDetailsTVC: UITableViewController {
-
+class TravelDetailsTVC: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
+    
+    var plannedTravel: TravelPlanning!
+    var travelPlanningIndex: Int!
+    
+    weak var delegate: TravelPlansDelegate?
+    
+    let datePicker: UIDatePicker = UIDatePicker()
+    
+    let travelType_array = ["Private", "Business"]
+    let travelType_picker = UIPickerView()
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    @IBOutlet weak var titleTF: UITextField!
+    @IBOutlet weak var countryTF: UITextField!
+    @IBOutlet weak var cityTF: UITextField!
+    @IBOutlet weak var startTripTF: UITextField!
+    @IBOutlet weak var endTripTF: UITextField!
+    @IBOutlet weak var travelTypeTF: UITextField!
+    @IBOutlet weak var notesTV: UITextView!
+    @IBOutlet weak var saveBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        notesTV.layer.cornerRadius = 5
+        notesTV.layer.borderWidth = 1
+        notesTV.layer.borderColor = UIColor.lightGray.cgColor
+        
         settingBackground()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editButtonTapped(_ :)))
+        
+        titleTF.delegate = self
+        countryTF.delegate = self
+        cityTF.delegate = self
+        startTripTF.delegate = self
+        endTripTF.delegate = self
+        travelTypeTF.delegate = self
+        notesTV.delegate = self
+        notesTV.inputAccessoryView = createToolbar()
+        
+        titleTF.text = plannedTravel.title
+        countryTF.text = plannedTravel.country
+        cityTF.text = plannedTravel.city
+        startTripTF.text = plannedTravel.startDate
+        endTripTF.text = plannedTravel.endDate
+        travelTypeTF.text = plannedTravel.travelType
+        notesTV.text = plannedTravel.travelNotes
+        
+        travelType_picker.dataSource = self
+        travelType_picker.delegate = self
+        pick_travelType()
+        
     }
-
+    
+    // MARK: - Action
+    @IBAction func savingChanges(_ sender: Any) {
+        plannedTravel.title = titleTF.text
+        plannedTravel.country = countryTF.text
+        plannedTravel.city = cityTF.text
+        plannedTravel.startDate = startTripTF.text
+        plannedTravel.endDate = endTripTF.text
+        plannedTravel.travelType = travelTypeTF.text
+        plannedTravel.travelNotes = notesTV.text
+        
+        delegate?.update(plannedTravel: plannedTravel, index: travelPlanningIndex)
+        
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editButtonTapped(_:)))
+        
+        titleTF.text = plannedTravel.title
+        countryTF.text = plannedTravel.country
+        cityTF.text = plannedTravel.city
+        startTripTF.text = plannedTravel.startDate
+        endTripTF.text = plannedTravel.endDate
+        travelTypeTF.text = plannedTravel.travelType
+        notesTV.text = plannedTravel.travelNotes
+        
+        titleTF.isEnabled = false
+        countryTF.isEnabled = false
+        cityTF.isEnabled = false
+        startTripTF.isEnabled = false
+        endTripTF.isEnabled = false
+        travelTypeTF.isEnabled = false
+        notesTV.isEditable = false
+        saveBtn.isHidden = true
+        
+        do {
+            try self.context.save()
+        } catch {
+            print("Error")
+        }
+    }
     private func settingBackground() {
         
         // Add a background view to the table view
@@ -33,71 +115,127 @@ class TravelDetailsTVC: UITableViewController {
         self.tableView.backgroundView = imageView
     }
     
+    //MARK: Edit-Button Tapped
+    @objc func editButtonTapped(_ sender: UIBarButtonItem) {
+        if titleTF.isEnabled == false {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(editButtonTapped(_:)))
+            
+            titleTF.isEnabled = true
+            countryTF.isEnabled = true
+            cityTF.isEnabled = true
+            startTripTF.isEnabled = true
+            endTripTF.isEnabled = true
+            travelTypeTF.isEnabled = true
+            notesTV.isEditable = true
+            saveBtn.isHidden = false
+        } else {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editButtonTapped(_:)))
+            
+            titleTF.isEnabled = false
+            countryTF.isEnabled = false
+            cityTF.isEnabled = false
+            startTripTF.isEnabled = false
+            endTripTF.isEnabled = false
+            travelTypeTF.isEnabled = false
+            notesTV.isEditable = false
+            saveBtn.isHidden = true
+        }
+    }
+    
+    //MARK: Toolbar, DatePicker und Keyboard
+    
+    func createToolbar() -> UIToolbar {
+        // Toolbar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        // Done Button
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneBtn], animated: true)
+        
+        return toolbar
+    }
+    
+    func createDatePicker() {
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.datePickerMode = .date
+        startTripTF.inputView = datePicker
+        startTripTF.inputAccessoryView = createToolbar()
+        endTripTF.inputView = datePicker
+        endTripTF.inputAccessoryView = createToolbar()
+    }
+    
+    //MARK: - pick_travelType
+    func pick_travelType(){
+        travelTypeTF.inputAccessoryView = createToolbar()
+        travelTypeTF.inputView = travelType_picker
+    }
+    
+    @objc func donePressed() {
+        
+        if notesTV.isFocused {
+            notesTV.endEditing(true)
+        } else {
+            if startTripTF.isEditing {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MMM dd. yyyy"
+                self.startTripTF.text = dateFormatter.string(from: datePicker.date)
+            } else {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MMM dd. yyyy"
+                self.endTripTF.text = dateFormatter.string(from: datePicker.date)
+            }
+            self.view.endEditing(true)
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return false
+    }
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        return 9
+    }
+    
+}
+
+// MARK: - PickerView Extensions
+extension TravelDetailsTVC: UIPickerViewDataSource, UIPickerViewDelegate{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        if pickerView == travelType_picker {
+            return travelType_array.count
+        }
         return 0
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if pickerView == travelType_picker {
+            return travelType_array[row]
+        }
+        return ""
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if pickerView == travelType_picker {
+            travelTypeTF.text = travelType_array[row]
+        }
+        print("An Error occured")
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
