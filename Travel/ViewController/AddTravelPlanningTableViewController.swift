@@ -22,10 +22,16 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
     let travelType_array = ["Private", "Business"]
     let travelType_picker = UIPickerView()
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     var travelPlanning: TravelPlanning!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        notesTV.layer.cornerRadius = 5
+        notesTV.layer.borderWidth = 1
+        notesTV.layer.borderColor = UIColor.lightGray.cgColor
         
         settingBackground()
         
@@ -62,6 +68,27 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
     // MARK: - Action
     
     @IBAction func savingTrip(_ sender: Any) {
+        
+        // Neuen Kontakt erzeugen
+        let newTravelPlanning = TravelPlanning(context: self.context)
+        newTravelPlanning.title = titleTF.text
+        newTravelPlanning.city = cityTF.text
+        newTravelPlanning.country = countryTF.text
+        newTravelPlanning.startDate = startTripTF.text
+        newTravelPlanning.endDate = endTripTF.text
+        newTravelPlanning.travelNotes = notesTV.text
+        
+        // Save context
+        do {
+            try self.context.save()
+        } catch {
+            print("Error; context saving")
+        }
+        
+        // Daten per Notification Center senden:
+        NotificationCenter.default.post(name: NSNotification.Name.init("de.Travel.addTravelPlanning"), object: newTravelPlanning)
+        
+        self.dismiss(animated: true)
     }
     
     //MARK: Toolbar, DatePicker und Keyboard
@@ -100,11 +127,11 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         } else {
             if startTripTF.isEditing {
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy MMM dd."
+                dateFormatter.dateFormat = "MMM dd. yyyy"
                 self.startTripTF.text = dateFormatter.string(from: datePicker.date)
             } else {
                 let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy MMM dd."
+                dateFormatter.dateFormat = "MMM dd. yyyy"
                 self.endTripTF.text = dateFormatter.string(from: datePicker.date)
             }
             self.view.endEditing(true)
@@ -127,37 +154,4 @@ class AddTravelPlanningTableViewController: UITableViewController, UITextFieldDe
         
         return 9
     }
-    
 }
-
-extension AddTravelPlanningTableViewController: UIPickerViewDataSource, UIPickerViewDelegate{
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
-        if pickerView == travelType_picker {
-            return travelType_array.count
-        }
-        return 0
-    }
-    
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        if pickerView == travelType_picker {
-            return travelType_array[row]
-        }
-        return ""
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        if pickerView == travelType_picker {
-            travelTypeTF.text = travelType_array[row]
-        }
-        print("An Error occured")
-    }
-}
-

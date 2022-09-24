@@ -3,9 +3,8 @@
     <entity name="TravelPlanning" representedClassName="TravelPlanning" syncable="YES" codeGenerationType="class">
         <attribute name="city" optional="YES" attributeType="String"/>
         <attribute name="country" optional="YES" attributeType="String"/>
-        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="endDate" optional="YES" attributeType="String"/>
+        <attribute name="startDate" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="travelNotes" optional="YES" attributeType="String"/>
         <attribute name="travelType" optional="YES" attributeType="String"/>
