@@ -28,6 +28,7 @@ class TravelDetailsTVC: UITableViewController, UITextFieldDelegate, UITextViewDe
     @IBOutlet weak var endTripTF: UITextField!
     @IBOutlet weak var travelTypeTF: UITextField!
     @IBOutlet weak var notesTV: UITextView!
+    @IBOutlet weak var saveBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,7 @@ class TravelDetailsTVC: UITableViewController, UITextFieldDelegate, UITextViewDe
         
         settingBackground()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editButtonTapped))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editButtonTapped(_ :)))
         
         titleTF.delegate = self
         countryTF.delegate = self
@@ -63,6 +64,44 @@ class TravelDetailsTVC: UITableViewController, UITextFieldDelegate, UITextViewDe
         
     }
     
+    // MARK: - Action
+    @IBAction func savingChanges(_ sender: Any) {
+        plannedTravel.title = titleTF.text
+        plannedTravel.country = countryTF.text
+        plannedTravel.city = cityTF.text
+        plannedTravel.startDate = startTripTF.text
+        plannedTravel.endDate = endTripTF.text
+        plannedTravel.travelType = travelTypeTF.text
+        plannedTravel.travelNotes = notesTV.text
+        
+        delegate?.update(plannedTravel: plannedTravel, index: travelPlanningIndex)
+        
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editButtonTapped(_:)))
+        
+        titleTF.text = plannedTravel.title
+        countryTF.text = plannedTravel.country
+        cityTF.text = plannedTravel.city
+        startTripTF.text = plannedTravel.startDate
+        endTripTF.text = plannedTravel.endDate
+        travelTypeTF.text = plannedTravel.travelType
+        notesTV.text = plannedTravel.travelNotes
+        
+        titleTF.isEnabled = false
+        countryTF.isEnabled = false
+        cityTF.isEnabled = false
+        startTripTF.isEnabled = false
+        endTripTF.isEnabled = false
+        travelTypeTF.isEnabled = false
+        notesTV.isEditable = false
+        saveBtn.isHidden = true
+        
+        do {
+            try self.context.save()
+        } catch {
+            print("Error")
+        }
+    }
     private func settingBackground() {
         
         // Add a background view to the table view
@@ -78,7 +117,29 @@ class TravelDetailsTVC: UITableViewController, UITextFieldDelegate, UITextViewDe
     
     //MARK: Edit-Button Tapped
     @objc func editButtonTapped(_ sender: UIBarButtonItem) {
-        
+        if titleTF.isEnabled == false {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(editButtonTapped(_:)))
+            
+            titleTF.isEnabled = true
+            countryTF.isEnabled = true
+            cityTF.isEnabled = true
+            startTripTF.isEnabled = true
+            endTripTF.isEnabled = true
+            travelTypeTF.isEnabled = true
+            notesTV.isEditable = true
+            saveBtn.isHidden = false
+        } else {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editButtonTapped(_:)))
+            
+            titleTF.isEnabled = false
+            countryTF.isEnabled = false
+            cityTF.isEnabled = false
+            startTripTF.isEnabled = false
+            endTripTF.isEnabled = false
+            travelTypeTF.isEnabled = false
+            notesTV.isEditable = false
+            saveBtn.isHidden = true
+        }
     }
     
     //MARK: Toolbar, DatePicker und Keyboard

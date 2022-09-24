@@ -414,6 +414,9 @@
                                                     <buttonConfiguration key="configuration" style="filled" title="Save">
                                                         <color key="baseBackgroundColor" systemColor="systemTealColor"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="savingChanges:" destination="oXL-J8-DJl" eventType="touchUpInside" id="UTF-eh-9UL"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -437,6 +440,7 @@
                         <outlet property="countryTF" destination="h0C-KY-p69" id="hfl-pd-fJQ"/>
                         <outlet property="endTripTF" destination="PdK-LK-TOo" id="3Jw-Kn-mwz"/>
                         <outlet property="notesTV" destination="eKz-3F-Hzc" id="Rcd-Yk-xQ5"/>
+                        <outlet property="saveBtn" destination="1Z7-zb-tYf" id="Ygl-Jt-upN"/>
                         <outlet property="startTripTF" destination="Eur-gF-6YE" id="feJ-MP-UeB"/>
                         <outlet property="titleTF" destination="Eee-fM-xxH" id="X7J-n7-dpa"/>
                         <outlet property="travelTypeTF" destination="rbl-7m-nMc" id="g1G-t7-Yu0"/>
