@@ -6,6 +6,7 @@
 - Swift
 - Tab Bar
 - NavController
+- Core Data
 - to be continued....
 
 ### Travel Destinations Bucket List
@@ -24,7 +25,13 @@
 
 ### Login and Registry Screens
 - App now is starting with a logged in user till the user is logging out
-- if no user is logged in I'm switching rootViewController to LoginNavigationController otherwise switching rootViewController to MainTabBarController to avoid a navStack 
+- if no user is logged in I'm switching rootViewController to LoginNavigationController otherwise switching rootViewController to MainTabBarController to avoid a navStack
+
+### Travel Planning
+- Planned Travel Overview 
+- Adding new Travel Plan Form
+- DetailsView
+- Evrything saved to SQLite DB wit Core Data Framework full CRUD Implementation
 
 
 ![bucketList1](https://user-images.githubusercontent.com/99251460/188696756-f4d66177-9c35-4dc3-ba21-e2290802f70c.png)
