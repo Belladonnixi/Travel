@@ -28,6 +28,7 @@
 		1D81C1DF28C1EC0F000FE925 /* TravelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81C1DE28C1EC0F000FE925 /* TravelTests.swift */; };
 		1D81C1E928C1EC0F000FE925 /* TravelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81C1E828C1EC0F000FE925 /* TravelUITests.swift */; };
 		1D81C1EB28C1EC0F000FE925 /* TravelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81C1EA28C1EC0F000FE925 /* TravelUITestsLaunchTests.swift */; };
+		1DA4467B28E0D6E600A32243 /* TravelDetailsTVCPickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA4467A28E0D6E600A32243 /* TravelDetailsTVCPickerViewExtension.swift */; };
 		1DD622BB28C23315008ABA87 /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD622BA28C23315008ABA87 /* PhotoAlbumViewController.swift */; };
 		1DEDC5AE28D47654006F02DE /* OverviewTravelPlanningTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDC5AD28D47654006F02DE /* OverviewTravelPlanningTVC.swift */; };
 		1DEDC5B028D477F0006F02DE /* TravelDetailsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEDC5AF28D477F0006F02DE /* TravelDetailsTVC.swift */; };
@@ -77,6 +78,7 @@
 		1D81C1E428C1EC0F000FE925 /* TravelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D81C1E828C1EC0F000FE925 /* TravelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelUITests.swift; sourceTree = "<group>"; };
 		1D81C1EA28C1EC0F000FE925 /* TravelUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1DA4467A28E0D6E600A32243 /* TravelDetailsTVCPickerViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDetailsTVCPickerViewExtension.swift; sourceTree = "<group>"; };
 		1DD622BA28C23315008ABA87 /* PhotoAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewController.swift; sourceTree = "<group>"; };
 		1DEDC5AD28D47654006F02DE /* OverviewTravelPlanningTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTravelPlanningTVC.swift; sourceTree = "<group>"; };
 		1DEDC5AF28D477F0006F02DE /* TravelDetailsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDetailsTVC.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		1DD622B928C22718008ABA87 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1DA4467A28E0D6E600A32243 /* TravelDetailsTVCPickerViewExtension.swift */,
 				1D57B6AF28DDEFA100397072 /* AddTravelPlanningExtensions.swift */,
 				1D4ED46F28C5570000160A00 /* PhotoAlbumViewControllerExtensions.swift */,
 			);
@@ -366,6 +369,7 @@
 				1D59CEA228C7ACBB0098CA0D /* PhotoDetailViewController.swift in Sources */,
 				1D40799F28C9B8E300A32A13 /* HomeViewController.swift in Sources */,
 				1D4079A128C9B8FB00A32A13 /* ProfileViewController.swift in Sources */,
+				1DA4467B28E0D6E600A32243 /* TravelDetailsTVCPickerViewExtension.swift in Sources */,
 				1D59CEC428C8C48F0098CA0D /* LoginViewController.swift in Sources */,
 				1D4ED47028C5570000160A00 /* PhotoAlbumViewControllerExtensions.swift in Sources */,
 				1D57B6B028DDEFA100397072 /* AddTravelPlanningExtensions.swift in Sources */,
