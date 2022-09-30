@@ -72,10 +72,6 @@ class TravelDetailsTVC: UITableViewController, UITextFieldDelegate, UITextViewDe
         
     }
     
-    func travelTypePickerDidSelectRow(selectedRowValue: Int?) {
-        travelTypeTF.text = travelTypePickerData!.travelTypeArray[selectedRowValue!]
-    }
-    
     // MARK: - Action
     @IBAction func savingChanges(_ sender: Any) {
         plannedTravel.title = titleTF.text
@@ -179,6 +175,11 @@ class TravelDetailsTVC: UITableViewController, UITextFieldDelegate, UITextViewDe
         endTripTF.inputAccessoryView = createToolbar()
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return false
+    }
+    
     //MARK: - pick_travelType
     func pick_travelType(){
         travelTypeTF.inputAccessoryView = createToolbar()
@@ -203,9 +204,8 @@ class TravelDetailsTVC: UITableViewController, UITextFieldDelegate, UITextViewDe
         }
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.endEditing(true)
-        return false
+    func travelTypePickerDidSelectRow(selectedRowValue: Int?) {
+        travelTypeTF.text = travelTypePickerData!.travelTypeArray[selectedRowValue!]
     }
     
     // MARK: - Table view data source
@@ -221,14 +221,3 @@ class TravelDetailsTVC: UITableViewController, UITextFieldDelegate, UITextViewDe
     }
     
 }
-
-//extension TravelDetailsTVC: UIPickerViewDelegate {
-//    
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        
-//        if pickerView == travelTypePickerData {
-//            travelTypeTF.text = travelTypePickerData!.travelType_array[row]
-//        }
-//        print("An Error occured")
-//    }
-//}
